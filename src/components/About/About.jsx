@@ -4,9 +4,17 @@ import boxsm from '../../assets/boxsm.png';
 
 const About = () => {
   return (
-    <div className="h-screen flex items-center justify-center bg-gradient-to-b from-orange-500 to-black relative">
-      {/* Large screen image */}
-      <img src={boxlg} alt="Large Box" className="hidden w-2/3 md:w-1/2 lg:w-2/4 z-0 lg:block" />
+    <div 
+    style={{ 
+      height: '100vh', 
+      backgroundImage: 'linear-gradient(to bottom, black, #ff7200)', 
+      position: 'relative' 
+    }} 
+    className="flex items-center justify-center"
+    >  {/* Reversed colors */}
+
+      {/* Large screen image with decreased height and added margins */}
+      <img src={boxlg} alt="Large Box" className="hidden w-3/4 h-auto md:w-3/4 md:h-auto lg:w-1/2 lg:h-auto xl:w-2/5 z-0 lg:block m-4" /> {/* Added margins */}
 
       {/* Small screen image */}
       <img src={boxsm} alt="Small Box" className="block w-9/10 h-auto lg:hidden z-0" />
@@ -17,9 +25,6 @@ const About = () => {
         {/* Paragraphs for larger screens */}
         <div className="hidden lg:block">
           <p className="text-sm sm:text-base md:text-lg font-semibold text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
           <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
           <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
           <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur dsff.</p>

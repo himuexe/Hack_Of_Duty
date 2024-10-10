@@ -4,6 +4,7 @@ import boxsm from '../../assets/boxsm.png';
 
 const About = () => {
   return (
+<<<<<<< HEAD
     <div 
     style={{ 
       height: '100vh', 
@@ -15,6 +16,12 @@ const About = () => {
 
       {/* Large screen image with decreased height and added margins */}
       <img src={boxlg} alt="Large Box" className="hidden w-3/4 h-auto md:w-3/4 md:h-auto lg:w-1/2 lg:h-auto xl:w-2/5 z-0 lg:block m-4" /> {/* Added margins */}
+=======
+    <div className="h-screen flex items-center justify-center relative">
+      {/* bg-gradient-to-b from-orange-500 to-black */}
+      {/* Large screen image */}
+      <img src={boxlg} alt="Large Box" className="hidden w-2/3 md:w-1/2 lg:w-2/4 z-0 lg:block" />
+>>>>>>> origin/main
 
       {/* Small screen image */}
       <img src={boxsm} alt="Small Box" className="block w-9/10 h-auto lg:hidden z-0" />

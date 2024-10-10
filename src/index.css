@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 /* Tailwind base, components, and utilities */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body{
     cursor: url('assets/crosshair.png'), auto;

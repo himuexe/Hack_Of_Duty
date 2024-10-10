@@ -46,7 +46,7 @@ export const Hero = () => {
   }, [animate]);
 
   return (
-    <div className="parent h-screen flex flex-col">
+    <div className="parent h-screen flex flex-col crosshair-cursor">
       <div className={`hero flex flex-col flex-1 gap-10 px-24 h-1/2 ${animate ? 'animate' : ''}`}>
         <div className="hero-title flex flex-col w-full text-4xl md:text-5xl lg:text-6xl">
           <span className='flex justify-start '>HACK OF</span>

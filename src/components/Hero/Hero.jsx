@@ -4,6 +4,16 @@ import Icon from '../../assets/logo.png';
 import Image from '../../assets/herohai.png';
 import "./Hero.css"
 
+const NeonButton = ({ text = 'Register Now' }) => {
+  return (
+    <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer">
+      <button className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-500 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105">
+        <span className="relative z-10">{text}</span>
+        <div className="absolute inset-0 bg-orange-500 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
+      </button>
+    </a>
+  );
+};
 export const Hero = () => {
   const [animate, setAnimate] = useState(false);
 
@@ -48,7 +58,7 @@ export const Hero = () => {
             <span>OCTOBER</span>
           </div>
           <div className="hero-context-right px-24">
-            <button className='btn-2 px-4 py-2 bg-orange-200 text-xl md:text-2xl lg:text-3xl'>Register Now</button>
+            <NeonButton />
           </div>
         </div>
       </div>

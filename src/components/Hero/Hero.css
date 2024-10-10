@@ -29,10 +29,6 @@
   width: 100%;
 }
 
-.icon {
-  height: 80px;
-  width: 80px;
-}
 
 .hero-title {
   z-index: 1;
@@ -86,13 +82,13 @@
   z-index: 1;
 }
 
-.head {
+/* .head {
   background: linear-gradient(to right, #032B44, #007bff);
   font-family: "Black Ops One", sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.5rem;
-}
+} */
 
 @media only screen and (max-width: 768px) {
   .image {

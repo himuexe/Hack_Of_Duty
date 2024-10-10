@@ -37,17 +37,6 @@ export const Hero = () => {
 
   return (
     <div className="parent h-screen flex flex-col">
-      <div className="navbar flex flex-row justify-between px-10 py-4 md:py-6 lg:py-8">
-        <div className="nav-left flex flex-row justify-center items-center gap-5">
-          <img src={Icon} alt="Icon" className='icon w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20' />
-          <div className="head flex justify-center items-center text-2xl md:text-3xl lg:text-4xl text-blue-800 font-semibold">
-            <span >SIGKDD <br /> STUDENT CHAPTER</span>
-          </div>
-        </div>
-        <div className="nav-right flex items-start">
-          <button className="btn text-white text-2xl md:text-2xl lg:text-2xl font-semibold">Register</button>
-        </div>
-      </div>
       <div className={`hero flex flex-col flex-1 gap-10 px-24 h-1/2 ${animate ? 'animate' : ''}`}>
         <div className="hero-title flex flex-col w-full text-4xl md:text-5xl lg:text-6xl">
           <span className='flex justify-start '>HACK OF</span>

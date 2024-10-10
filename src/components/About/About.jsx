@@ -4,7 +4,8 @@ import boxsm from '../../assets/boxsm.png';
 
 const About = () => {
   return (
-    <div className="h-screen flex items-center justify-center bg-gradient-to-b from-orange-500 to-black relative">
+    <div className="h-screen flex items-center justify-center relative">
+      {/* bg-gradient-to-b from-orange-500 to-black */}
       {/* Large screen image */}
       <img src={boxlg} alt="Large Box" className="hidden w-2/3 md:w-1/2 lg:w-2/4 z-0 lg:block" />
 

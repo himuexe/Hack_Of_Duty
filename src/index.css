@@ -7,7 +7,11 @@
 @tailwind utilities;
 
 body{
-    cursor: url('assets/crosshair.png'), auto;}
+    cursor: url('assets/crosshair.png'), auto;
+    background-image: linear-gradient(to bottom, #ff7200, black);
+      background-attachment: fixed;
+  
+  }
 
 .crosshair-cursor {
     cursor: url('assets/confirm.png'), auto;
@@ -17,20 +21,3 @@ body{
     position: relative;
     height: 1vh;
 }
-
-.bg-sep::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(
-      to bottom,
-      #663300,
-      #774400,
-      #885500,
-      #996600,
-      #aa7700,
-      #bb8800,
-      #cc9900
-    );
-    box-shadow: 0vw 1vw 3vw 1vw #663300;
-} 

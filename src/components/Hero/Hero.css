@@ -24,10 +24,12 @@
 
 
 .hero-title {
+  margin-top: 5vh;
+  margin-left: 6vw;
   z-index: 1;
   font-family: "Black Ops One", sans-serif;
   color: white;
-  font-size: 10vw;
+  font-size: 12vw;
   position: relative;
   width: 100%;
   text-shadow: 0 0 10px rgba(255, 115, 0, 0.7);
@@ -42,8 +44,8 @@
 }
 
 .image {
-  width: 38%;
-  height: 80%;
+  width: 36%;
+  height: auto;
   object-fit: contain;
   position: absolute;
   bottom: 0;
@@ -61,6 +63,9 @@
     justify-content: space-between;
     padding: 0 10px;
     font-size: 6vh;
+  }
+  .hero-title{
+    margin-top: -1vh;
   }
   
   .hero-title span:first-child {

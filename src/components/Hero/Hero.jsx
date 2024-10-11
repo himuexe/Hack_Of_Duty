@@ -66,8 +66,8 @@ export const Hero = () => {
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
       <div className="hero flex flex-col flex-1 gap-10  h-1/2">
         <div className="hero-title flex flex-col w-full text-5xl">
-          <span className='flex justify-start '>HACK OF</span>
-          <span className="flex justify-end">DUTY</span>
+          <span className='flex ml-8 justify-start'>HACK&nbsp;OF</span>
+          <span className="flex mr-2 justify-end">DUTY</span>
         </div>
         <div className="hero-context flex flex-row w-full">
           <div className="hero-context-left flex flex-col gap-2 items-center justify-center text-9xl md:text-[12rem] lg:text-[15rem]">

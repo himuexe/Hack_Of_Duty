@@ -45,7 +45,7 @@ const Navbar = () => {
                 transform: `translateY(${translateY}px)`,
                 transition: 'none'
             }}
-            className="navbar w-full flex flex-row justify-between px-10 py-4 md:py-6 lg:py-8 bg-orange-500 shadow-md z-50"
+            className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15' />

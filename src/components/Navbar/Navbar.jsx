@@ -50,7 +50,7 @@ const Navbar = () => {
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15' />
-                <img src={club} alt="Icon" className=' w-32 h-16 ' />
+                <img src={club} alt="Icon" className=' w-34 h-10 ' />
                 
             </div>
             <div className="nav-right flex items-start">

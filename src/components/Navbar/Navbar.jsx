@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../../assets/logo.png";
+import club from "../../assets/club.png";
 
 const Navbar = () => {
     const navbarRef = useRef(null);
@@ -49,9 +50,8 @@ const Navbar = () => {
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15' />
-                <div className="head flex justify-center items-center text-2xl md:text-3xl lg:text-4xl text-gray-800 font-semibold font-syne">
-                    <span>SIGKDD Student Chapter</span>
-                </div>
+                <img src={club} alt="Icon" className=' w-32 h-16 ' />
+                
             </div>
             <div className="nav-right flex items-start">
                 <button className="btn text-white text-2xl md:text-2xl lg:text-2xl">Register</button>

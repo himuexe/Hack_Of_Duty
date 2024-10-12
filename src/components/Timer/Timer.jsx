@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './Timer.css';
 
@@ -36,15 +35,17 @@ const CountdownTimer = () => {
         <h2 className="timer-text text-5xl mb-4">Events In The Timer</h2>
         <h3 className="timer-text text-5xl mb-6">Are <span className="text-orange-500">CLOSER </span><span>Than They Appear...</span></h3>
         <div className="flex justify-center items-center space-x-4">
-          
           {Object.entries(timeLeft).map(([key, value]) => (
             <div key={key} className="flex flex-col items-center">
-              <span className={`timer-text mt-4 text-5xl mb-2 ${key === 'hours' ? 'text-orange-500' : ''}`}>
-                {value.toString().padStart(2, '0')}
-              </span>
+              <div className="timer-box bg-gray-800 border-2 border-orange-500 rounded-lg p-4 shadow-lg">
+                <span className={`timer-text mt-4 text-5xl mb-2 ${key === 'hours' ? 'text-orange-500' : ''}`}>
+                  {value.toString().padStart(2, '0')}
+                </span>
+              </div>
               <span className="text-sm">{key}</span>
             </div>
-          ))} </div>
+          ))}
+        </div>
         <div className="mt-4 border-t border-orange-500 w-full"></div>
       </div>
     </div>

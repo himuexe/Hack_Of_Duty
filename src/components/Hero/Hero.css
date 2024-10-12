@@ -43,6 +43,13 @@
   text-align: center;
 }
 
+#effet {
+  position: absolute;
+  mix-blend-mode: screen;
+  object-fit: cover;
+  opacity: 40%;
+}
+
 .image {
   width: 36%;
   height: auto;

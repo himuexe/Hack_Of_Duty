@@ -1,92 +1,9 @@
-/* General reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@media only screen and (max-width: 768px){
+  .timer-main{
+    width: 90vw;
+  }
 
-/* Body styling */
-body {
-  background-color: #121212;
-  color: white;
-  font-family: 'Digital-7';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  .timer-text{
+    font-size: 9vw;
+  }
 }
-
-/* Container for the entire content */
-.container {
-  text-align: center;
-}
-
-/* Heading styling */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Highlighted text */
-.highlight {
-  color: #ff7300;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Countdown styling */
-.countdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  margin-top: 20px;
-}
-
-.time-box {
-  text-align: center;
-}
-
-.time {
-  display: block;
-  font-size: 3rem;
-  font-weight: bold;
-}
-#minutes{
- color: #ff7300;
-}
-
-
-.label {
-  font-size: 1rem;
-  text-transform: uppercase;
-  
-}
-.labels{
-    font-size: 1rem;
-    text-transform: uppercase;
-    color: #ff7300;
-}
-
-
-.separator {
-  font-size: 3rem;
-  margin: 0 10px;
-  color: #ffffff;
-}
-
-/* Optional: Styling the orange border */
-.container::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: #ff7300;
-  margin-top: 20px;
-}                                                                                                                                                                                   

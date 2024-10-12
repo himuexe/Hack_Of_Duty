@@ -1,66 +1,54 @@
+
 import React, { useState, useEffect } from 'react';
 import './Timer.css';
 
-const Timer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+const CountdownTimer = () => {
+  const targetDate = new Date('2024-10-28T11:00:00'); // October 28th at 11 PM
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  // Countdown logic inside useEffect
+  function calculateTimeLeft() {
+    const difference = targetDate - new Date();
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+
   useEffect(() => {
-    const countdown = () => {
-      const targetDate = new Date("2024-12-01T00:00:00").getTime();
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-      
-      if (difference < 0) {
-        clearInterval(timer);
-        return;
-      }
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
-
-    const timer = setInterval(countdown, 1000);
-    return () => clearInterval(timer); // Clean up the interval when the component unmounts
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="container">
-      <h1>Something will happen</h1>
-      <h2>Something <span className="highlight">wonderful</span></h2>
-      
-      <div className="countdown">
-        <div className="time-box">
-          <span className="time" id="days">{timeLeft.days}</span>
-          <span className="label">days</span>
-        </div>
-        <span className="separator">:</span>
-        <div className="time-box">
-          <span className="time" id="hours">{timeLeft.hours}</span>
-          <span className="label">hours</span>
-        </div>
-        <span className="separator">:</span>
-        <div className="time-box">
-          <span className="time" id="minutes">{timeLeft.minutes}</span>
-          <span className="label">minutes</span>
-        </div>
-        <span className="separator">:</span>
-        <div className="time-box">
-          <span className="time" id="seconds">{timeLeft.seconds}</span>
-          <span className="label">seconds</span>
-        </div>
+    <div className="timer-main relative bg-black p-8 text-white font-bold mt-12 mb-12 w-4/5 mx-auto text-center" style={{ height: '70vh' }}>
+      {/* Orange offset shadow */}  
+      <div className="absolute inset-0 bg-orange-500 transform translate-x-2 translate-y-2 -z-10"></div>
+      {/* Main content */}
+      <div className="bg-black p-8 relative z-10 h-full flex flex-col justify-center items-center">
+        <h2 className="timer-text text-5xl mb-4">Events In The Timer</h2>
+        <h3 className="timer-text text-5xl mb-6">Are <span className="text-orange-500">CLOSER </span><span>Than They Appear...</span></h3>
+        <div className="flex justify-center items-center space-x-4">
+          
+          {Object.entries(timeLeft).map(([key, value]) => (
+            <div key={key} className="flex flex-col items-center">
+              <span className={`timer-text mt-4 text-5xl mb-2 ${key === 'hours' ? 'text-orange-500' : ''}`}>
+                {value.toString().padStart(2, '0')}
+              </span>
+              <span className="text-sm">{key}</span>
+            </div>
+          ))} </div>
+        <div className="mt-4 border-t border-orange-500 w-full"></div>
       </div>
     </div>
   );
 }
 
-export default Timer;
+export default CountdownTimer;

@@ -48,6 +48,9 @@
   mix-blend-mode: screen;
   object-fit: cover;
   opacity: 40%;
+  height: auto;
+  width: auto;
+  flex: auto;
 }
 
 .image {

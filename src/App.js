@@ -7,12 +7,11 @@ import Timer from "./components/Timer/Timer.jsx";
 import Outro from "./components/Hero/Outro.jsx";
 import { Card, CardContent } from "../src/components/ui/card.jsx";
 
-// Import images
-import img1 from "./assets/img1.jpg"; // Adjust the path as necessary
+import img1 from "./assets/img1.jpg"; 
 import img2 from "./assets/img2.jpg";
 import img3 from "./assets/img3.jpg";
 import img4 from "./assets/img4.jpg";
-import placeholder from "./assets/placeholder.svg"; // Import your placeholder image
+import placeholder from "./assets/placeholder.svg"; 
 
 const App = () => {
   const missions = [
@@ -37,8 +36,7 @@ const App = () => {
       <Timer />
       <About />
 
-      {/* Mission Section with more padding */}
-      <div className="px-12 py-6"> {/* Added horizontal padding here */}
+      <div className="px-12 py-6">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-5xl font-bold tracking-wider">CHOOSE YOUR MISSION</h1>
         </div>
@@ -49,12 +47,14 @@ const App = () => {
               className="bg-gray-800 border-2 border-amber-500 text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/50"
             >
               <CardContent className="p-0">
-                <img
-                  src={mission.image}
-                  alt={mission.name}
-                  style={{ width: "300px", height: "420px" }} // Keep dimensions the same
-                  className="object-cover"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={mission.image}
+                    alt={mission.name}
+                    style={{ width: "100%", height: "420px" }}
+                    className="object-cover" 
+                  />
+                </div>
                 <div className="p-4">
                   <h3 className="text-xl font-bold text-amber-500">{mission.name}</h3>
                 </div>
@@ -64,8 +64,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* Sponsors Section with more padding */}
-      <div className="px-12 py-6 mb-8"> {/* Added horizontal padding here */}
+      <div className="px-12 py-6 mb-8">
         <h2 className="text-4xl font-bold mb-6 text-amber-500">OUR SPONSORS</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sponsors.map((sponsor, index) => (
@@ -74,12 +73,14 @@ const App = () => {
               className="bg-gray-800 border border-amber-500 text-white overflow-hidden transition-all duration-300 hover:shadow-md hover:shadow-amber-500/50"
             >
               <CardContent className="p-0">
-                <img
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                  style={{ width: "200px", height: "100px" }} // Keep dimensions the same
-                  className="object-cover"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    style={{ width: "100%", height: "100px" }}
+                    className="object-cover"
+                  />
+                </div>
                 <div className="p-2">
                   <h3 className="text-lg font-bold text-center text-amber-500">{sponsor.name}</h3>
                 </div>
@@ -89,12 +90,9 @@ const App = () => {
         </div>
       </div>
 
-      {/* Outro Section */}
       <Outro />
     </div>
   );
 };
-
-
 
 export default App;

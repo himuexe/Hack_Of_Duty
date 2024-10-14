@@ -12,6 +12,7 @@ import img2 from "./assets/img2.jpg";
 import img3 from "./assets/img3.jpg";
 import img4 from "./assets/img4.jpg";
 import placeholder from "./assets/placeholder.svg"; 
+import Footer from "./components/Footer/Footer.jsx";
 
 const App = () => {
   const missions = [
@@ -104,6 +105,7 @@ const App = () => {
       </div>
 
       <Outro />
+      <Footer/>
     </div>
   );
 };

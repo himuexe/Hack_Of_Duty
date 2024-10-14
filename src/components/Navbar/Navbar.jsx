@@ -50,7 +50,7 @@ const Navbar = () => {
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15' />
-                <img src={club} alt="Icon" className=' w-34 h-10 ' />
+                <img src={club} alt="Icon" className='w-34 h-10' />
             </div>
             <div className="nav-right flex items-start">
                 <a
@@ -63,26 +63,27 @@ const Navbar = () => {
                 >
                     <button
                         style={{
-                            padding: "12px 30px",
-                            backgroundColor: "#333", // Darker color, like a tactical background
+                            padding: "8px 16px", // Smaller padding for mobile screens
+                            backgroundColor: "rgba(51, 51, 51, 0.8)", // Darker color with reduced opacity
                             border: "2px solid #ff7200", // Yellow border like Call of Duty color theme
                             borderRadius: "10px", // Subtle rounded edges for a more rugged feel
                             color: "#ff7200", // Bright yellow text to match the theme
-                            fontSize: "18px",
+                            fontSize: "14px", // Smaller font size for mobile
                             cursor: "pointer",
-                            textTransform: "uppercase",
-                            letterSpacing: "1.5px",
+                            letterSpacing: "2px",
                             transition: "background-color 0.3s, box-shadow 0.3s",
                             boxShadow: "0 0 15px 3px rgba(255, 204, 0, 0.7)",
                             position: "relative",
-                            overflow: "hidden"
+                            overflow: "hidden",
+                            marginLeft: window.innerWidth <= 640 ? "25px" : "0px", // Apply left margin on mobile
+                            marginTop: "4px" // 4px top margin for the button
                         }}
                         onMouseOver={(e) => {
-                            e.target.style.backgroundColor = "#222"; // Slightly darker on hover
+                            e.target.style.backgroundColor = "rgba(34, 34, 34, 0.9)"; // Slightly darker on hover
                             e.target.style.boxShadow = "0 0 20px 6px rgba(255, 204, 0, 0.9)";
                         }}
                         onMouseOut={(e) => {
-                            e.target.style.backgroundColor = "#333"; // Original dark background
+                            e.target.style.backgroundColor = "rgba(51, 51, 51, 0.8)"; // Original dark background with reduced opacity
                             e.target.style.boxShadow = "0 0 15px 3px rgba(255, 204, 0, 0.7)";
                         }}
                     >

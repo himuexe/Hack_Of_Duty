@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import Icon from '../../assets/logo.png';
 import Image from '../../assets/herohai.png';
-import "./Hero.css"
+import "./Hero.css";
 
 const NeonButton = ({ text = 'Register Now' }) => {
   return (
@@ -14,48 +13,66 @@ const NeonButton = ({ text = 'Register Now' }) => {
     </a>
   );
 };
+
 export const Hero = () => {
-  const [animate, setAnimate] = useState(false);
+  const heroRef = useRef(null);
+
+  const animateHero = () => {
+    gsap.timeline()
+      .from('.hero-title', {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut'
+      })
+      .from('.hero-context-left', {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut'
+      })
+      .from('.hero-context-right', {
+        x: 100,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.inOut'
+      });
+  };
 
   useEffect(() => {
-    setAnimate(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateHero();
+          }
+        });
+      }, 
+      { threshold: 0.2 } // Trigger when 20% of the hero section is visible
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
   }, []);
 
-  useEffect(() => {
-    if (animate) {
-      gsap.timeline()
-        .from('.hero-title', {
-          y: 100,
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.inOut'
-        })
-        .from('.hero-context-left', {
-          x: -100,
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.inOut'
-        })
-        .from('.hero-context-right', {
-          x: 100,
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.inOut'
-        });
-    }
-  }, [animate]);
-
   return (
-    <div className="parent h-screen flex flex-col crosshair-cursor">
-      <div className={`hero flex flex-col flex-1 gap-10 px-24 h-1/2 ${animate ? 'animate' : ''}`}>
-        <div className="hero-title flex flex-col w-full text-4xl md:text-5xl lg:text-6xl">
-          <span className='flex justify-start '>HACK OF</span>
-          <span className="flex justify-end">DUTY</span>
+    <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
+      <div className="hero flex flex-col flex-1 gap-10  h-1/2">
+        <div className="hero-title flex flex-col w-full text-5xl">
+          <span className='flex ml-8 justify-start'>HACK&nbsp;OF</span>
+          <span className="flex mr-2 justify-end">DUTY</span>
         </div>
         <div className="hero-context flex flex-row w-full">
           <div className="hero-context-left flex flex-col gap-2 items-center justify-center text-9xl md:text-[12rem] lg:text-[15rem]">
-            <span>28-29</span>
-            <span>OCTOBER</span>
+            <span style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5)' }}>28-29</span>
+            <span style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5)' }}>OCTOBER</span>
           </div>
           <div className="hero-context-right px-24">
             <NeonButton />

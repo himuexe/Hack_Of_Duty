@@ -5,8 +5,8 @@ import Hero from "./components/Hero/Hero.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Timer from "./components/Timer/Timer.jsx";
 import Outro from "./components/Hero/Outro.jsx";
-import { Card, CardContent } from "../src/components/ui/card.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { Card, CardContent, CardHoverLayer, CardDescription } from "../src/components/ui/card.jsx";
 
 import img1 from "./assets/img1.jpg"; 
 import img2 from "./assets/img2.jpg";

@@ -16,10 +16,10 @@ import placeholder from "./assets/placeholder.svg";
 
 const App = () => {
   const missions = [
-    { name: "HEALTHCARE", image: img1 },
-    { name: "NLP", image: img2 },
-    { name: "OPEN CV", image: img3 },
-    { name: "EDTECH", image: img4 },
+    { name: "HEALTHCARE", image: img1, description: "Innovating healthcare solutions." },
+    { name: "NLP", image: img2, description: "Natural Language Processing advancements." },
+    { name: "OPEN CV", image: img3, description: "Computer vision technology." },
+    { name: "EDTECH", image: img4, description: "Education technology for the future." },
   ];
 
   const sponsors = [
@@ -45,7 +45,17 @@ const App = () => {
           {missions.map((mission, index) => (
             <Card
               key={index}
-              className="bg-gray-800 border-2 border-amber-500 text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/50"
+              className="bg-gray-800 border-2 border-amber-500 text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/50 relative"
+              onMouseEnter={(e) => {
+                const hoverLayer = e.currentTarget.querySelector(".card-hover-layer");
+                hoverLayer.classList.add("opacity-100");
+                hoverLayer.style.height = "80%";
+              }}
+              onMouseLeave={(e) => {
+                const hoverLayer = e.currentTarget.querySelector(".card-hover-layer");
+                hoverLayer.classList.remove("opacity-100");
+                hoverLayer.style.height = "0";
+              }}
             >
               <CardContent className="p-0">
                 <div className="overflow-hidden">
@@ -60,6 +70,9 @@ const App = () => {
                   <h3 className="text-xl font-bold text-amber-500">{mission.name}</h3>
                 </div>
               </CardContent>
+              <CardHoverLayer className="card-hover-layer">
+                <CardDescription>{mission.description}</CardDescription>
+              </CardHoverLayer>
             </Card>
           ))}
         </div>
@@ -67,7 +80,7 @@ const App = () => {
 
       <div className="px-12 py-6 mb-8">
         <h2 className="text-4xl font-bold mb-6 text-amber-500">OUR SPONSORS</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap -4">
           {sponsors.map((sponsor, index) => (
             <Card
               key={index}

@@ -49,12 +49,8 @@ const Navbar = () => {
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
-                <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15' />
-                </a>
-                <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <img src={club} alt="Icon" className='w-34 h-10' />
-                </a>
+                <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor' />
+                <img src={club} alt="Icon" className='w-34 h-10 button-cursor' />
             </div>
             <div className="nav-right flex items-start">
                 <a
@@ -67,13 +63,13 @@ const Navbar = () => {
                 >
                     <button
                         style={{
+                            cursor: `url(${require('../../assets/buttoncursor.png')}), auto`, // Custom cursor
                             padding: "8px 16px", // Smaller padding for mobile screens
                             backgroundColor: "rgba(51, 51, 51, 0.8)", // Darker color with reduced opacity
                             border: "2px solid #ff7200", // Yellow border like Call of Duty color theme
                             borderRadius: "10px", // Subtle rounded edges for a more rugged feel
                             color: "#ffffff", // Bright yellow text to match the theme
                             fontSize: "14px", // Smaller font size for mobile
-                            cursor: "pointer",
                             letterSpacing: "2px",
                             transition: "background-color 0.3s, box-shadow 0.3s",
                             boxShadow: "0 0 15px 3px rgba(255, 204, 0, 0.7)",

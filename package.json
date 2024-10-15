@@ -9,6 +9,7 @@
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "hack-of-duty": "file:",
+    "lucide-react": "^0.453.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-ga": "^3.3.1",

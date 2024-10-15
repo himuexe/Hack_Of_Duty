@@ -6,6 +6,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@font-face {
+    font-family: 'Hitmarker';
+    src: url('assets/fonts/HitmarkerText-Regular.ttf') format('truetype');
+}
+
 body{
     cursor: url('assets/confirm.png'), auto;
     background-image: linear-gradient(to bottom, #ff7200, black);

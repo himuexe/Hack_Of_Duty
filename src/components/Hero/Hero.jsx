@@ -2,13 +2,25 @@ import React, {  useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import Image from '../../assets/herohai.png';
 import "./Hero.css";
+import aud from "../../assets/thaithai.mp3"
 
 const NeonButton = ({ text = 'Register Now' }) => {
+  const audioRef = useRef(null); // Create a reference to the audio element
+
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.play(); // Play the sound when the button is clicked
+    }
+  };
+
   return (
     <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer">
-      <button className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-500 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105">
-        <span style={{fontFamily: 'Hitmarker'}} className="relative z-10">{text}</span>
+
+      <button onClick={playSound} className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-500 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105">
+       <span style={{fontFamily: 'Hitmarker'}} className="relative z-10">{text}</span>
+
         <div className="absolute inset-0 bg-orange-500 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
+        <audio ref={audioRef} src={aud} />
       </button>
     </a>
   );
@@ -86,3 +98,4 @@ export const Hero = () => {
 };
 
 export default Hero;
+		

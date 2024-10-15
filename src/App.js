@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Timer from "./components/Timer/Timer.jsx";
 import Outro from "./components/Hero/Outro.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import Sponsors from "./components/Sponsors/sponsors.jsx";  
 import {
   Card,
   CardContent,
@@ -18,7 +17,6 @@ import Hijacked from "./assets/Hijacked.mp4";
 import Shipment from "./assets/Shipment.mp4";
 import FiringRange from "./assets/FiringRange.mp4";
 import Rust from "./assets/Rust.mp4";
-import placeholder from "./assets/placeholder.svg";
 import FAQs from "./components/FAQ/faqs.jsx";
 import PrizePool from "./components/Prize/PrizePool.jsx";
 

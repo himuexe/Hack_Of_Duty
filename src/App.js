@@ -53,9 +53,7 @@ const App = () => {
     },
   ];
 
-  const sponsors = [
-    { name: "ACM SIGKDD", image: SIGKDD }
-  ];
+  const sponsors = [{ name: "ACM SIGKDD", image: SIGKDD }];
 
   return (
     <div>
@@ -65,7 +63,7 @@ const App = () => {
       <Timer />
       <About />
 
-      <div className="px-12 py-6">
+      <div className="lg:mt-16 px-12 py-6">
         <div className="flex justify-center items-center mb-8">
           <div
             className="text-6xl mt-2 text-white tracking-wider"
@@ -126,46 +124,38 @@ const App = () => {
           OUR SPONSORS
         </h2>
         <div className="flex">
-        <div className="slider">
-          <div className="slide-track">
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
-            <div className="slide"><img className="sponsor-img" src={ACM} alt="Image 2" /></div>
-            <div className="slide"><img className="sponsor-img" src={DSBS} alt="Image 3" /></div>
-            <div className="slide"><img className="sponsor-img" src={SRM} alt="Image 4" /></div>
+          <div className="slider">
+            <div className="slide-track">
+              <div className="slide">
+                <img className="sponsor-img" src={SIGKDD} alt="Image 1" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={ACM} alt="Image 2" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={DSBS} alt="Image 3" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={SRM} alt="Image 4" />
+              </div>
 
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
-            <div className="slide"><img className="sponsor-img" src={ACM} alt="Image 2" /></div>
-            <div className="slide"><img className="sponsor-img" src={DSBS} alt="Image 3" /></div>
-            <div className="slide"><img className="sponsor-img" src={SRM} alt="Image 4" /></div>
+              <div className="slide">
+                <img className="sponsor-img" src={SIGKDD} alt="Image 1" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={ACM} alt="Image 2" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={DSBS} alt="Image 3" />
+              </div>
+              <div className="slide">
+                <img className="sponsor-img" src={SRM} alt="Image 4" />
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-        {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {sponsors.map((sponsor, index) => (
-            <Card
-              key={index}
-              className="bg-gray-800 border border-amber-500 text-white overflow-hidden transition-all duration-300 hover:shadow-md hover:shadow-amber-500/50"
-            >
-              <CardContent className="p-0">
-                <div className="overflow-hidden">
-                  <img
-                    src={sponsor.image}
-                    alt={sponsor.name}
-                    style={{ width: "100%", height: "100px" }}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-2">
-                  <h3 className="text-lg font-bold text-center text-amber-500">
-                    {sponsor.name}
-                  </h3>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div> */}
       </div>
-      
+
       <Outro />
       <FAQs />
       <Footer />

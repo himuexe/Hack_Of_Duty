@@ -21,6 +21,9 @@ import FAQs from "./components/FAQ/faqs.jsx";
 import PrizePool from "./components/Prize/PrizePool.jsx";
 
 import SIGKDD from "./assets/SIGKDD.png";
+import SRM from "./assets/SRM.png";
+import DSBS from "./assets/DSBS.png";
+import ACM from "./assets/ACM.png";
 
 const App = () => {
   const missions = [
@@ -122,18 +125,21 @@ const App = () => {
         >
           OUR SPONSORS
         </h2>
+        <div className="flex">
         <div className="slider">
           <div className="slide-track">
             <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 2" /></div>
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 3" /></div>
+            <div className="slide"><img className="sponsor-img" src={ACM} alt="Image 2" /></div>
+            <div className="slide"><img className="sponsor-img" src={DSBS} alt="Image 3" /></div>
+            <div className="slide"><img className="sponsor-img" src={SRM} alt="Image 4" /></div>
 
             <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 2" /></div>
-            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 3" /></div>
+            <div className="slide"><img className="sponsor-img" src={ACM} alt="Image 2" /></div>
+            <div className="slide"><img className="sponsor-img" src={DSBS} alt="Image 3" /></div>
+            <div className="slide"><img className="sponsor-img" src={SRM} alt="Image 4" /></div>
           </div>
         </div>
-
+        </div>
         {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sponsors.map((sponsor, index) => (
             <Card

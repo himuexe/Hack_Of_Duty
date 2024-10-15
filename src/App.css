@@ -54,7 +54,7 @@ h1{
 
 .slide-track {
     display: flex;
-    width: calc(250px * 6);
+    width: calc(250px * 8);
     animation: scroll 40s linear infinite;
 }
 
@@ -63,7 +63,7 @@ h1{
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 3)); /* Scrolls to halfway (3 slides) */
+        transform: translateX(calc(-250px * 4));
     }
 }
 

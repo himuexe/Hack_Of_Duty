@@ -13,19 +13,19 @@ import {
   CardDescription,
 } from "../src/components/ui/card.jsx";
 
-import img1 from "./assets/img1.jpg";
-import img2 from "./assets/img2.jpg";
-import img3 from "./assets/img3.jpg";
-import img4 from "./assets/img4.jpg";
+import Hijacked from "./assets/Hijacked.mp4";
+import Shipment from "./assets/Shipment.mp4";
+import FiringRange from "./assets/FiringRange.mp4";
+import Rust from "./assets/Rust.mp4"
 import placeholder from "./assets/placeholder.svg";
 import FAQs from "./components/FAQ/faqs.jsx";
 
 const App = () => {
   const missions = [
-    { name: "HEALTHCARE", image: img1, description: "Gear up and deploy cutting-edge solutions that can be game-changers in the medical field. Whether you're crafting AI-driven diagnostics or building advanced systems to improve patient care, this mission is about creating tech that saves lives." },
-    { name: "NLP", image: img2, description: "Engage in Natural Language Processing, where words are your weapon. Just like calling out targets in COD, your models will understand, interpret, and respond with precision. Deploy algorithms that crack the language code and conquer communication." },
-    { name: "OPEN CV", image: img3, description: "Enter the battlefield of Computer Vision, where your AI sees the world like a UAV in COD. Train models to detect, track, and analyze with pinpoint accuracy. Your mission: ensure no object goes unseen, no detail missed." },
-    { name: "EDTECH", image: img4, description: "Gear up for the EdTech track, where you'll revolutionize learning like a tactical strike in COD. Build tools that empower students and educators, ensuring knowledge is deployed swiftly and effectively. Education is your mission; innovation is your weapon." },
+    { name: "HEALTHCARE", image: Hijacked, description: "Gear up and deploy cutting-edge solutions that can be game-changers in the medical field. Whether you're crafting AI-driven diagnostics or building advanced systems to improve patient care, this mission is about creating tech that saves lives." },
+    { name: "NLP", image: Rust, description: "Engage in Natural Language Processing, where words are your weapon. Just like calling out targets in COD, your models will understand, interpret, and respond with precision. Deploy algorithms that crack the language code and conquer communication." },
+    { name: "OPEN CV", image: Shipment, description: "Enter the battlefield of Computer Vision, where your AI sees the world like a UAV in COD. Train models to detect, track, and analyze with pinpoint accuracy. Your mission: ensure no object goes unseen, no detail missed." },
+    { name: "EDTECH", image: FiringRange, description: "Gear up for the EdTech track, where you'll revolutionize learning like a tactical strike in COD. Build tools that empower students and educators, ensuring knowledge is deployed swiftly and effectively. Education is your mission; innovation is your weapon." },
   ];
 
   const sponsors = [
@@ -72,7 +72,7 @@ const App = () => {
             >
               <CardContent className="p-0">
                 <div className="overflow-hidden">
-                  <img
+                  <video autoPlay loop muted
                     src={mission.image}
                     alt={mission.name}
                     style={{ width: "100%", height: "420px" }}

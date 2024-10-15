@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import club from "../../assets/club.png";
 
 const Footer = () => {
@@ -25,6 +25,9 @@ const Footer = () => {
         </a>
         <a href="https://x.com/srmsigkdd" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition duration-300">
           <FaTwitter size={30} />
+        </a>
+        <a href="mailto:srmsigkdd@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition duration-300">
+          <FaEnvelope size={30} />
         </a>
       </div>
     </div>

@@ -84,7 +84,7 @@ const Navbar = () => {
                             backgroundColor: "rgba(51, 51, 51, 0.8)", // Darker color with reduced opacity
                             border: "2px solid #ff7200", // Yellow border like Call of Duty color theme
                             borderRadius: "10px", // Subtle rounded edges for a more rugged feel
-                            color: "#ffffff", // Bright yellow text to match the theme
+                            color: "#ff7200", // Bright yellow text to match the theme
                             fontSize: "14px", // Smaller font size for mobile
                             letterSpacing: "2px",
                             transition: "background-color 0.3s, box-shadow 0.3s",

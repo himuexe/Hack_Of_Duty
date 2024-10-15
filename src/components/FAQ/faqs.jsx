@@ -28,42 +28,52 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="border-b border-orange-500 py-4 button-cursor">
+    <div className="border-b border-orange-500">
       <button
-        className="flex justify-between items-center w-full text-left"
-        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left py-4 px-4 flex justify-between items-center focus:outline-none focus:bg-orange-900 transition-colors duration-200"
+        onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-white font-semibold text-sm sm:text-base">{question}</span>
+        <span className="text-white font-semibold text-sm sm:text-base pr-4">{question}</span>
         {isOpen ? (
-          <ChevronUp className="text-orange-500 flex-shrink-0 ml-2" size={20} />
+          <ChevronUp className="text-orange-500 flex-shrink-0" size={20} />
         ) : (
-          <ChevronDown className="text-orange-500 flex-shrink-0 ml-2" size={20} />
+          <ChevronDown className="text-orange-500 flex-shrink-0" size={20} />
         )}
       </button>
       {isOpen && (
-        <p className="mt-2 text-orange-200 text-sm sm:text-base leading-relaxed">
+        <div className="px-4 pb-4 text-orange-200 text-sm sm:text-base leading-relaxed">
           {answer}
-        </p>
+        </div>
       )}
     </div>
   );
 };
 
 const FAQs = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className="bg-black min-h-screen p-4 sm:p-6 md:p-8 flex items-center justify-center">
       <div className="w-full max-w-3xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-bold text-orange-500 mb-6 sm:mb-8 text-center">
           Frequently Asked Questions
         </h2>
-        <div className="space-y-4">
+        <div className="border-t border-orange-500">
           {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => handleClick(index)}
+            />
           ))}
         </div>
       </div>

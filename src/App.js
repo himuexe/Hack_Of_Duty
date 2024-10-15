@@ -16,16 +16,36 @@ import {
 import Hijacked from "./assets/Hijacked.mp4";
 import Shipment from "./assets/Shipment.mp4";
 import FiringRange from "./assets/FiringRange.mp4";
-import Rust from "./assets/Rust.mp4"
+import Rust from "./assets/Rust.mp4";
 import placeholder from "./assets/placeholder.svg";
 import FAQs from "./components/FAQ/faqs.jsx";
 
 const App = () => {
   const missions = [
-    { name: "HEALTHCARE", image: Hijacked, description: "Gear up and deploy cutting-edge solutions that can be game-changers in the medical field. Whether you're crafting AI-driven diagnostics or building advanced systems to improve patient care, this mission is about creating tech that saves lives." },
-    { name: "NLP", image: Rust, description: "Engage in Natural Language Processing, where words are your weapon. Just like calling out targets in COD, your models will understand, interpret, and respond with precision. Deploy algorithms that crack the language code and conquer communication." },
-    { name: "OPEN CV", image: Shipment, description: "Enter the battlefield of Computer Vision, where your AI sees the world like a UAV in COD. Train models to detect, track, and analyze with pinpoint accuracy. Your mission: ensure no object goes unseen, no detail missed." },
-    { name: "EDTECH", image: FiringRange, description: "Gear up for the EdTech track, where you'll revolutionize learning like a tactical strike in COD. Build tools that empower students and educators, ensuring knowledge is deployed swiftly and effectively. Education is your mission; innovation is your weapon." },
+    {
+      name: "HEALTHCARE",
+      image: Hijacked,
+      description:
+        "Gear up and deploy cutting-edge solutions that can be game-changers in the medical field. Whether you're crafting AI-driven diagnostics or building advanced systems to improve patient care, this mission is about creating tech that saves lives.",
+    },
+    {
+      name: "NLP",
+      image: Rust,
+      description:
+        "Engage in Natural Language Processing, where words are your weapon. Just like calling out targets in COD, your models will understand, interpret, and respond with precision. Deploy algorithms that crack the language code and conquer communication.",
+    },
+    {
+      name: "OPEN CV",
+      image: Shipment,
+      description:
+        "Enter the battlefield of Computer Vision, where your AI sees the world like a UAV in COD. Train models to detect, track, and analyze with pinpoint accuracy. Your mission: ensure no object goes unseen, no detail missed.",
+    },
+    {
+      name: "EDTECH",
+      image: FiringRange,
+      description:
+        "Gear up for the EdTech track, where you'll revolutionize learning like a tactical strike in COD. Build tools that empower students and educators, ensuring knowledge is deployed swiftly and effectively. Education is your mission; innovation is your weapon.",
+    },
   ];
 
   const sponsors = [
@@ -44,13 +64,13 @@ const App = () => {
       <About />
 
       <div className="px-12 py-6">
-        <div className="flex justify-between items-center mb-8">
-          <h1
-            className="text-6xl mt-2 font-bold text-white tracking-wider"
+        <div className="flex justify-center items-center mb-8">
+          <div
+            className="text-6xl mt-2 text-white tracking-wider"
             style={{ fontFamily: "Black Ops One, sans-serif" }}
           >
             CHOOSE YOUR MISSION
-          </h1>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {missions.map((mission, index) => (
@@ -72,7 +92,10 @@ const App = () => {
             >
               <CardContent className="p-0">
                 <div className="overflow-hidden">
-                  <video autoPlay loop muted
+                  <video
+                    autoPlay
+                    loop
+                    muted
                     src={mission.image}
                     alt={mission.name}
                     style={{ width: "100%", height: "420px" }}
@@ -94,7 +117,12 @@ const App = () => {
       </div>
 
       <div className="px-12 py-6 mb-8">
-        <h2 className="text-4xl font-bold mb-6 text-amber-500">OUR SPONSORS</h2>
+        <h2
+          className="text-6xl mb-6 text-white text-center"
+          style={{ fontFamily: "Black Ops One, sans-serif" }}
+        >
+          OUR SPONSORS
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sponsors.map((sponsor, index) => (
             <Card

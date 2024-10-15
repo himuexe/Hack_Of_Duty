@@ -19,7 +19,7 @@ const About = () => {
       />
 
       <div className="absolute text-center z-10 top-1/4 px-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-2 mt-5" style={{ fontFamily: 'Black Ops One, sans-serif' }}>HACK OF DUTY</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-2 lg:mt-2 mt-8" style={{ fontFamily: 'Black Ops One, sans-serif' }}>HACK OF DUTY</h1>
         
         {/* Paragraphs for larger screens */}
         <div className="hidden lg:block">

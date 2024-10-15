@@ -19,6 +19,7 @@ import FiringRange from "./assets/FiringRange.mp4";
 import Rust from "./assets/Rust.mp4";
 import placeholder from "./assets/placeholder.svg";
 import FAQs from "./components/FAQ/faqs.jsx";
+import PrizePool from "./components/Prize/PrizePool.jsx";
 
 const App = () => {
   const missions = [
@@ -60,6 +61,7 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
+      <PrizePool />
       <Timer />
       <About />
 

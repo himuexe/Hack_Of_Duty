@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Timer from "./components/Timer/Timer.jsx";
 import Outro from "./components/Hero/Outro.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import Sponsors from "./components/Sponsors/sponsors.jsx";  
 import {
   Card,
   CardContent,
@@ -19,6 +20,8 @@ import FiringRange from "./assets/FiringRange.mp4";
 import Rust from "./assets/Rust.mp4";
 import placeholder from "./assets/placeholder.svg";
 import FAQs from "./components/FAQ/faqs.jsx";
+
+import SIGKDD from "./assets/SIGKDD.png";
 
 const App = () => {
   const missions = [
@@ -49,11 +52,7 @@ const App = () => {
   ];
 
   const sponsors = [
-    { name: "Sponsor 1", image: placeholder },
-    { name: "Sponsor 2", image: placeholder },
-    { name: "Sponsor 3", image: placeholder },
-    { name: "Sponsor 4", image: placeholder },
-    { name: "Sponsor 5", image: placeholder },
+    { name: "ACM SIGKDD", image: SIGKDD }
   ];
 
   return (
@@ -123,7 +122,19 @@ const App = () => {
         >
           OUR SPONSORS
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="slider">
+          <div className="slide-track">
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 2" /></div>
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 3" /></div>
+
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 1" /></div>
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 2" /></div>
+            <div className="slide"><img className="sponsor-img" src={SIGKDD} alt="Image 3" /></div>
+          </div>
+        </div>
+
+        {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sponsors.map((sponsor, index) => (
             <Card
               key={index}
@@ -146,9 +157,9 @@ const App = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
       </div>
-
+      
       <Outro />
       <FAQs />
       <Footer />

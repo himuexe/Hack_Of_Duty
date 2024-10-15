@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Will there be prizes for the winners?",
-    answer: "Yes! We have exciting prizes for the top teams in each track, including cash rewards, grants and goodies."
+    answer: "Yes! We have a prize pool of ₹30000 for the top three teams, along with some interesting stuff for others!"
   }
 ];
 
@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-white font-semibold text-sm sm:text-base pr-4">{question}</span>
+        <span style={{ fontFamily: "Hitmarker, sans-serif" }} className="text-white text-3lg sm:text-base pr-4">{question}</span>
         {isOpen ? (
           <ChevronUp className="text-orange-500 flex-shrink-0" size={20} />
         ) : (
@@ -44,7 +44,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         )}
       </button>
       {isOpen && (
-        <div className="px-4 pb-4 text-orange-200 text-sm sm:text-base leading-relaxed">
+        <div style={{ fontFamily: "Hitmarker, sans-serif" }} className="px-4 pb-4 text-orange-200 text-md sm:text-base leading-relaxed">
           {answer}
         </div>
       )}
@@ -62,7 +62,7 @@ const FAQs = () => {
   return (
     <div className="bg-black min-h-screen p-4 sm:p-6 md:p-8 flex items-center justify-center">
       <div className="w-full max-w-3xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-orange-500 mb-6 sm:mb-8 text-center">
+        <h2 style={{ fontFamily: "Hitmarker, sans-serif" }} className="text-4xl sm:text-5xl text-orange-500 mb-6 sm:mb-8 text-center">
           Frequently Asked Questions
         </h2>
         <div className="border-t border-orange-500">

@@ -36,7 +36,7 @@ const About = () => {
           <p className="text-sm sm:text-base md:text-lg text-white"><b>Prepare to code, innovate, and dominate! 💻🚀</b></p>
         </div>
 
-        {/* Paragraphs for small screens */}
+          {/* Paragraphs for small screens */}
         <div className="block lg:hidden">
           <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling</p>
           <p className="text-sm sm:text-base md:text-lg text-white">24-hour hackathon brought to you by</p>

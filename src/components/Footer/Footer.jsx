@@ -4,13 +4,11 @@ import club from "../../assets/club.png";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white p-4 mx-4 flex justify-between items-center shadow-lg">
-      <div className="flex items-center space-x-2">
-      <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <img src={club} alt="Club Logo" className="h-10 w-auto" />
-      </a>
+    <div className="bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center shadow-lg">
+      <div className="flex items-center space-x-2 mb-4 md:mb-0">
+        <img src={club} alt="Club Logo" className="h-10 w-auto" />
       </div>
-      <div className="flex-grow text-center">
+      <div className="flex-grow text-center mb-4 md:mb-0">
         <span className="text-lg font-bold tracking-wide">© 2024 Made with ☕ by SRMIST ACM SIGKDD Student Chapter</span>
       </div>
       <div className="flex space-x-4">

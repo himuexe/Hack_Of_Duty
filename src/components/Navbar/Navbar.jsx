@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../../assets/logo.png";
 import club from "../../assets/club.png";
+import aud from "../../assets/thaithai.mp3";
 
 const Navbar = () => {
     const navbarRef = useRef(null);
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [translateY, setTranslateY] = useState(0);
+    const audioRef = useRef(null); 
+
 
     useEffect(() => {
         if (navbarRef.current) {
@@ -37,6 +40,12 @@ const Navbar = () => {
         };
     }, [navbarHeight]);
 
+        const playSound = () => {
+        if (audioRef.current) {
+            audioRef.current.play(); // Play the sound when the button is clicked
+        }
+    };
+
     return (
         <div 
             ref={navbarRef}
@@ -58,10 +67,12 @@ const Navbar = () => {
                     target="_blank" // Opens link in a new tab
                     rel="noopener noreferrer" // Security feature for external links
                     style={{
+                        fontFamily: 'Hitmarker', fontWeight: 'bold', // Custom font
+
                         textDecoration: "none" // Removes underline from the link
                     }}
                 >
-                    <button
+                    <button onClick={playSound} 
                         style={{
                             cursor: `url(${require('../../assets/buttoncursor.png')}), auto`, // Custom cursor
                             padding: "8px 16px", // Smaller padding for mobile screens
@@ -88,6 +99,7 @@ const Navbar = () => {
                         }}
                     >
                         Register Now
+                        <audio ref={audioRef} src={aud} />
                     </button>
                 </a>
             </div>

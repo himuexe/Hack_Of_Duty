@@ -35,13 +35,13 @@
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-.hero-context-left {
+/* .hero-context-left {
   font-family: "Black Ops One", sans-serif;
   color: white;
   z-index: 1;
   font-size: 5vw;
   text-align: center;
-}
+} */
 
 #video {
   position: absolute;
@@ -100,10 +100,10 @@
     align-items: center;
   }
   
-  .hero-context-left {
+  /* .hero-context-left {
     font-size: 8vw;
     z-index: 2 ;
-  }
+  } */
   .hero-context-right {
     font-size: 4vw;
     z-index: 2 ;

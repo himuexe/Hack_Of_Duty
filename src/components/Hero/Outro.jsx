@@ -75,7 +75,7 @@ export const Outro = () => {
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
       <div className="hero flex flex-col flex-1 gap-10  h-1/2">
         <div className="outro-title flex flex-col w-full text-5xl">
-          <span  className='flex ml-9 justify-start'>&nbsp;Your Duty</span>
+          <span  className='flex ml-9 justify-start'>&nbsp;Your Hack</span>
           <span  className="flex justify-end mr-5">Awaits</span>
         </div>
         <div className="hero-context flex flex-row w-full">

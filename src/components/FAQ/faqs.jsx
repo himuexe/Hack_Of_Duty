@@ -62,7 +62,7 @@ const FAQs = () => {
   return (
     <div className="bg-black min-h-screen p-4 sm:p-6 md:p-8 flex items-center justify-center">
       <div className="w-full max-w-3xl mx-auto">
-        <h2 style={{ fontFamily: "Black Ops One, sans-serif" }} className="text-4xl sm:text-5xl text-orange-500 mb-6 sm:mb-8 text-center">
+        <h2 style={{ fontFamily: "Hitmarker, sans-serif" }} className="text-4xl sm:text-5xl text-orange-500 mb-6 sm:mb-8 text-center">
           Frequently Asked Questions
         </h2>
         <div className="border-t border-orange-500">

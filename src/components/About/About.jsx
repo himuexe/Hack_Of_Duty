@@ -5,14 +5,13 @@ import boxsm from '../../assets/boxsm.png';
 const About = () => {
   return (
     <div className="h-screen flex items-center justify-center relative">
-      {/* Large screen image with increased size */}
+     
       <img 
         src={boxlg} 
         alt="Large Box" 
         className="hidden w-3/5 md:w-3/5 lg:w-3/5 xl:w-2/3 h-auto z-0 lg:block m-4" 
-      /> {/* Adjusted sizes for larger box */}
+      /> 
 
-      {/* Small screen image */}
       <img 
         src={boxsm} 
         alt="Small Box" 

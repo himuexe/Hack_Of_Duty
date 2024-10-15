@@ -120,7 +120,7 @@ const App = () => {
 
       <div className="px-12 py-6 mb-8">
         <h2
-          className="text-6xl mb-6 text-white text-center"
+          className="text-5xl lg:text-6xl mb-6 text-white text-center"
           style={{ fontFamily: "Black Ops One, sans-serif" }}
         >
           OUR SPONSORS

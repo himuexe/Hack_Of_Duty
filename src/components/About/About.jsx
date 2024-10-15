@@ -23,28 +23,38 @@ const About = () => {
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-2 mt-5" style={{ fontFamily: 'Black Ops One, sans-serif' }}>HACK OF DUTY</h1>
         
         {/* Paragraphs for larger screens */}
-        <div style={{fontFamily: 'Hitmarker'}} className="hidden lg:block">
-          <p className="flex text-sm sm:text-base md:text-lg text-white justify-end w-[40%] ml-[29vw] ">Hack of Duty is the flagship 24-hour hackathon organized by SRMSIGKDD, where innovation meets relentless coding! Bringing together bright minds from various domains, this fast-paced event challenges participants to solve real-world problems in healthcare, NLP, computer vision, and edtech. With just 24 hours on the clock, teams will need to brainstorm, prototype, and pitch their most creative and impactful solutions. It’s a race against time to show technical prowess, creative thinking, and collaborative energy, all in the name of duty to innovation!</p>
-          
+        <div className="hidden lg:block">
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling 24-hour hackathon brought to you by <b>SRMIST ACM SIGKDD!</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Get ready to unleash your coding skills and creativity as you tackle real-world challenges across four</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">exciting tracks: <b>Computer Vision</b>, <b>Natural Language Processing (NLP)</b>, <b>EdTech</b>, and <b>Healthcare</b>.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Gear up for a non-stop marathon of code, collaboration, and groundbreaking ideas. Rally your team,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">dive into the mission, and let's push the boundaries of technology together.</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">"<i>History is written by the victor.</i>" — Captain Price, Call of Duty</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>Prepare to code, innovate, and dominate! 💻🚀</b></p>
         </div>
 
           {/* Paragraphs for small screens */}
         <div className="block lg:hidden">
-          <p className="text-sm sm:text-base md:text-lg text-white">Hack of Duty is the flagship 24-hour</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">hackathon organized by SRMSIGKDD,</p>        
-          <p className="text-sm sm:text-base md:text-lg text-white">where innovation meets relentless</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">coding! Bringing together bright minds</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">from various domains, this fast-paced</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">event challenges participants to solve</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">real-world problems in healthcare, NLP,</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">computer vision, and edtech. With just</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">24 hours on the clock, teams will need</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">to brainstorm, prototype, and pitch</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">their most creative and impactful</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">solutions. It’s a race against time to</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">show technical prowess, creative</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">thinking, and collaborative energy, all</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">in the name of duty to innovation!</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">24-hour hackathon brought to you by</p>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>SRMIST ACM SIGKDD!</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Get ready to unleash your coding skills and</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">creativity as you tackle real-world challenges</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">across four exciting tracks: <b>Computer Vision</b>,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>Natural Language Processing (NLP)</b>, <b>EdTech</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">and <b>Healthcare</b>.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Gear up for a non-stop marathon of code,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">collaboration, and groundbreaking ideas.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Rally your team, dive into the mission,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">and let's push the boundaries of technology</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">together.</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">"<i>History is written by the victor.</i>"</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">— Captain Price, Call of Duty</p>
+          <br></br>
         </div>
       </div>
     </div>

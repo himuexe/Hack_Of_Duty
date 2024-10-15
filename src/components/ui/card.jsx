@@ -37,7 +37,7 @@ CardTitle.displayName = "CardTitle"
 const CardDescription = React.forwardRef(({ className, children, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-muted-foreground text-center", className)}
     {...props}
   >
     {children}
@@ -67,7 +67,7 @@ const CardHoverLayer = React.forwardRef(({ className, children, ...props }, ref)
   <div
     ref={ref}
     className={cn(
-      "absolute bottom-0 left-0 right-0 h-0 flex items-center justify-center p-6 bg-orange-500 bg-opacity-70 text-white z-10 opacity-0 transition-all duration-300 rounded-xl",
+      "absolute bottom-0 left-0 right-0 h-0 flex items-center justify-center p-6 bg-orange-500 bg-opacity-70 text-white z-10 opacity-0 transition-all duration-300 rounded-lg",
       className
     )}
     {...props}

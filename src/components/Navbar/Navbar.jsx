@@ -58,8 +58,13 @@ const Navbar = () => {
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
-                <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor' />
-                <img src={club} alt="Icon" className='w-34 h-10 button-cursor' />
+                <a href='https://srmsigkdd.vercel.app/' target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor' />
+                </a>
+                <a href='https://srmsigkdd.vercel.app/' target="_blank" rel="noopener noreferrer">
+                    <img src={club} alt="Icon" className='w-34 h-10 button-cursor' />
+                </a>
+                
             </div>
             <div className="nav-right flex items-start">
                 <a

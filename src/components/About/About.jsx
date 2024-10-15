@@ -24,30 +24,37 @@ const About = () => {
         
         {/* Paragraphs for larger screens */}
         <div className="hidden lg:block">
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur magnam tempore.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Vivamus lacinia odio ipsum dolor sit, amet consectetur adipisc.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur adipisc sdkfjdfdv.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur adipisc dsfdsf.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur adipisc dfns.</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling 24-hour hackathon brought to you by <b>SRMIST ACM SIGKDD!</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Get ready to unleash your coding skills and creativity as you tackle real-world challenges across four</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">exciting tracks: <b>Computer Vision</b>, <b>Natural Language Processing (NLP)</b>, <b>EdTech</b>, and <b>Healthcare</b>.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Gear up for a non-stop marathon of code, collaboration, and groundbreaking ideas. Rally your team,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">dive into the mission, and let's push the boundaries of technology together.</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">"<i>History is written by the victor.</i>" — Captain Price, Call of Duty</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>Prepare to code, innovate, and dominate! 💻🚀</b></p>
         </div>
 
         {/* Paragraphs for small screens */}
         <div className="block lg:hidden">
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
-          <p className="text-sm sm:text-base md:text-lg text-white">Lorem ipsum dolor sit amet, consectetur.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">24-hour hackathon brought to you by</p>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>SRMIST ACM SIGKDD!</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Get ready to unleash your coding skills and</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">creativity as you tackle real-world challenges</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">across four exciting tracks: <b>Computer Vision</b>,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white"><b>Natural Language Processing (NLP)</b>, <b>EdTech</b></p>
+          <p className="text-sm sm:text-base md:text-lg text-white">and <b>Healthcare</b>.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Gear up for a non-stop marathon of code,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">collaboration, and groundbreaking ideas.</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">Rally your team, dive into the mission,</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">and let's push the boundaries of technology</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">together.</p>
+          <br></br>
+          <p className="text-sm sm:text-base md:text-lg text-white">"<i>History is written by the victor.</i>"</p>
+          <p className="text-sm sm:text-base md:text-lg text-white">— Captain Price, Call of Duty</p>
+          <br></br>
         </div>
       </div>
     </div>

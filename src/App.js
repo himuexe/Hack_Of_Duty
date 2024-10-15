@@ -16,10 +16,10 @@ import placeholder from "./assets/placeholder.svg";
 
 const App = () => {
   const missions = [
-    { name: "HEALTHCARE", image: img1, description: "Innovating healthcare solutions." },
-    { name: "NLP", image: img2, description: "Natural Language Processing advancements." },
-    { name: "OPEN CV", image: img3, description: "Computer vision technology." },
-    { name: "EDTECH", image: img4, description: "Education technology for the future." },
+    { name: "HEALTHCARE", image: img1, description: "Gear up and deploy cutting-edge solutions that can be game-changers in the medical field. Whether you're crafting AI-driven diagnostics or building advanced systems to improve patient care, this mission is about creating tech that saves lives." },
+    { name: "NLP", image: img2, description: "Engage in Natural Language Processing, where words are your weapon. Just like calling out targets in COD, your models will understand, interpret, and respond with precision. Deploy algorithms that crack the language code and conquer communication." },
+    { name: "OPEN CV", image: img3, description: "Enter the battlefield of Computer Vision, where your AI sees the world like a UAV in COD. Train models to detect, track, and analyze with pinpoint accuracy. Your mission: ensure no object goes unseen, no detail missed." },
+    { name: "EDTECH", image: img4, description: "Gear up for the EdTech track, where you'll revolutionize learning like a tactical strike in COD. Build tools that empower students and educators, ensuring knowledge is deployed swiftly and effectively. Education is your mission; innovation is your weapon." },
   ];
 
   const sponsors = [
@@ -80,7 +80,7 @@ const App = () => {
 
       <div className="px-12 py-6 mb-8">
         <h2 className="text-4xl font-bold mb-6 text-amber-500">OUR SPONSORS</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap -4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sponsors.map((sponsor, index) => (
             <Card
               key={index}

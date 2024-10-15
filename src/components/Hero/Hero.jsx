@@ -65,7 +65,7 @@ export const Hero = () => {
 
   return (
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
-      <video id="effet" autoPlay loop muted>
+      <video id="video" autoPlay loop muted>
         <source src={targetVid} type='video/mp4'/>
       </video>
       <div className="hero flex flex-col flex-1 gap-10  h-1/2">

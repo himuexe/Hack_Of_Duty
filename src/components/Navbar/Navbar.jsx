@@ -58,6 +58,8 @@ const Navbar = () => {
                     target="_blank" // Opens link in a new tab
                     rel="noopener noreferrer" // Security feature for external links
                     style={{
+                        fontFamily: 'Hitmarker', fontWeight: 'bold', // Custom font
+
                         textDecoration: "none" // Removes underline from the link
                     }}
                 >

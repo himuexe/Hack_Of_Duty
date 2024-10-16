@@ -11,12 +11,17 @@
     src: url('assets/fonts/HitmarkerText-Regular.ttf') format('truetype');
 }
 
-body{
+body {
     cursor: url('assets/confirm.png'), auto;
     background-image: linear-gradient(to bottom, #ff7200, black);
-      background-attachment: fixed;
-  
-  }
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('assets/gradientX.png');
+    }
+}
 
 .crosshair-cursor {
     cursor: url('assets/confirm.png'), auto;

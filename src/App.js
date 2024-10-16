@@ -21,7 +21,7 @@ import FAQs from "./components/FAQ/faqs.jsx";
 import PrizePool from "./components/Prize/PrizePool.jsx";
 
 import SIGKDD from "./assets/SIGKDD.png";
-import SRM from "./assets/SRM.png";
+import SRM from "./assets/SRM-logo.png";
 import DSBS from "./assets/DSBS.png";
 import ACM from "./assets/ACM.png";
 

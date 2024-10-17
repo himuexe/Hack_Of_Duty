@@ -7,10 +7,10 @@ import {
   CardDescription,
 } from '../ui/card.jsx';
 
-import Hijacked from '../../assets/Hijacked.mp4';
-import Shipment from '../../assets/Shipment.mp4';
-import FiringRange from '../../assets/FiringRange.mp4';
-import Rust from '../../assets/Rust.mp4';
+import Hijacked from '../../assets/Hijacked.webm';
+import Shipment from '../../assets/Shipment.webm';
+import FiringRange from '../../assets/FiringRange.webm';
+import Rust from '../../assets/Rust.webm';
 
 const missions = [
   {

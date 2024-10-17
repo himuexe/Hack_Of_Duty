@@ -1,7 +1,7 @@
 import React, {  useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import Image from '../../assets/herohai.png';
-import targetVid from '../../assets/target2.mp4'
+import Image from '../../assets/herohai.webp';
+import targetVid from '../../assets/target.webm'
 import "./Hero.css";
 import aud from "../../assets/thaithai.mp3"
 
@@ -78,7 +78,7 @@ export const Hero = () => {
   return (
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
       <video id="video" autoPlay loop muted>
-        <source src={targetVid} type='video/mp4'/>
+        <source src={targetVid} type='video/webm'/>
       </video>
       <div className="hero flex flex-col flex-1 gap-10  h-1/2">
         <div className="hero-title flex flex-col w-full text-5xl">

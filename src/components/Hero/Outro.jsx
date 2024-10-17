@@ -1,6 +1,6 @@
 import React, {  useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import Image from '../../assets/outro.png';
+import Image from '../../assets/outro.webp';
 import "./Outro.css";
 import aud from "../../assets/thaithai.mp3"
 

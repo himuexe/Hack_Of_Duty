@@ -58,6 +58,7 @@ const Navbar = () => {
 
     const playSound = () => {
         if (audioRef.current) {
+            audioRef.current.volume = 0.5;
             audioRef.current.play(); // Play the sound when the button is clicked
         }
     };

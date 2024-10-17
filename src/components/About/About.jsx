@@ -19,10 +19,10 @@ const About = () => {
       />
 
       <div className="absolute text-center z-10 top-1/4 px-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-2 lg:mt-2 mt-8" style={{ fontFamily: 'Black Ops One, sans-serif' }}>HACK OF DUTY</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-2 lg:mt-2 mt-1" style={{ fontFamily: 'Black Ops One, sans-serif' }}>HACK OF DUTY</h1>
         
         {/* Paragraphs for larger screens */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block" style={{fontFamily:"Hitmarker"}}>
           <br></br>
           <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling 24-hour hackathon brought to you by <b>SRMIST ACM SIGKDD!</b></p>
           <p className="text-sm sm:text-base md:text-lg text-white">Get ready to unleash your coding skills and creativity as you tackle real-world challenges across four</p>
@@ -36,7 +36,7 @@ const About = () => {
         </div>
 
           {/* Paragraphs for small screens */}
-        <div className="block lg:hidden">
+        <div className="block lg:hidden" style={{fontFamily:"Hitmarker"}}>
           <p className="text-sm sm:text-base md:text-lg text-white">Welcome to <b>Hack Of Duty</b>, a thrilling</p>
           <p className="text-sm sm:text-base md:text-lg text-white">24-hour hackathon brought to you by</p>
           <p className="text-sm sm:text-base md:text-lg text-white"><b>SRMIST ACM SIGKDD!</b></p>

@@ -4,43 +4,9 @@ import club from "../../assets/club.png";
 import aud from "../../assets/thaithai.mp3";
 
 const Navbar = () => {
-    const navbarRef = useRef(null);
-    const [navbarHeight, setNavbarHeight] = useState(0);
-    const [translateY, setTranslateY] = useState(0);
-    const audioRef = useRef(null); 
+    const audioRef = useRef(null);
 
-
-    useEffect(() => {
-        if (navbarRef.current) {
-            setNavbarHeight(navbarRef.current.offsetHeight);
-        }
-    }, []);
-
-    useEffect(() => {
-        let prevScrollY = window.scrollY;
-        let accumulatedDiff = 0;
-
-        const controlNavbar = () => {
-            const currentScrollY = window.scrollY;
-            const scrollDiff = prevScrollY - currentScrollY; // Positive when scrolling up
-            
-            accumulatedDiff = Math.min(
-                Math.max(accumulatedDiff + scrollDiff, -navbarHeight),
-                0
-            );
-
-            setTranslateY(accumulatedDiff);
-            prevScrollY = currentScrollY;
-        };
-
-        window.addEventListener('scroll', controlNavbar);
-
-        return () => {
-            window.removeEventListener('scroll', controlNavbar);
-        };
-    }, [navbarHeight]);
-
-        const playSound = () => {
+    const playSound = () => {
         if (audioRef.current) {
             audioRef.current.play(); // Play the sound when the button is clicked
         }
@@ -48,11 +14,9 @@ const Navbar = () => {
 
     return (
         <div 
-            ref={navbarRef}
             style={{
-                position: 'fixed',
+                position: 'sticky',
                 top: 0,
-                transform: `translateY(${translateY}px)`,
                 transition: 'none'
             }}
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
@@ -64,7 +28,6 @@ const Navbar = () => {
                 <a href='https://srmsigkdd.vercel.app/' target="_blank" rel="noopener noreferrer">
                     <img src={club} alt="Icon" className='w-34 h-10 button-cursor' />
                 </a>
-                
             </div>
             <div className="nav-right flex items-start">
                 <a
@@ -73,7 +36,6 @@ const Navbar = () => {
                     rel="noopener noreferrer" // Security feature for external links
                     style={{
                         fontFamily: 'Hitmarker', fontWeight: 'bold', // Custom font
-
                         textDecoration: "none" // Removes underline from the link
                     }}
                 >

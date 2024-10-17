@@ -1,4 +1,4 @@
-import React, {  useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import Image from '../../assets/outro.webp';
 import "./Outro.css";
@@ -25,6 +25,7 @@ const NeonButton = ({ text = 'Register Now' }) => {
 
 export const Outro = () => {
   const heroRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const animateHero = () => {
     gsap.timeline()
@@ -52,8 +53,9 @@ export const Outro = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !hasAnimated) {
             animateHero();
+            setHasAnimated(true); // Set the flag to true after animation runs
           }
         });
       }, 
@@ -69,7 +71,7 @@ export const Outro = () => {
         observer.unobserve(heroRef.current);
       }
     };
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">

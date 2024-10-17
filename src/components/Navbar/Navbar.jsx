@@ -4,7 +4,57 @@ import club from "../../assets/club.png";
 import aud from "../../assets/thaithai.mp3";
 
 const Navbar = () => {
+    const navbarRef = useRef(null);
+    const [navbarHeight, setNavbarHeight] = useState(0);
+    const [translateY, setTranslateY] = useState(0);
+    const [scrollDirection, setScrollDirection] = useState("up"); // New state to track scroll direction
+
     const audioRef = useRef(null);
+
+    useEffect(() => {
+        if (navbarRef.current) {
+            setNavbarHeight(navbarRef.current.offsetHeight);
+        }
+    }, []);
+
+    useEffect(() => {
+        let prevScrollY = window.scrollY;
+        let accumulatedDiff = 0;
+
+        const controlNavbar = () => {
+            const currentScrollY = window.scrollY;
+
+            // Determine scroll direction (up or down)
+            if (currentScrollY > prevScrollY) {
+                // Scrolling down
+                setScrollDirection("down");
+            } else if (currentScrollY < prevScrollY) {
+                // Scrolling up
+                setScrollDirection("up");
+            }
+
+            const scrollDiff = prevScrollY - currentScrollY; // Positive when scrolling up
+
+            accumulatedDiff = Math.min(
+                Math.max(accumulatedDiff + scrollDiff, -navbarHeight),
+                0
+            );
+
+            if (scrollDirection === "up") {
+                setTranslateY(0); // Show the navbar when scrolling up
+            } else if (scrollDirection === "down") {
+                setTranslateY(-navbarHeight); // Hide the navbar when scrolling down
+            }
+
+            prevScrollY = currentScrollY;
+        };
+
+        window.addEventListener('scroll', controlNavbar);
+
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [navbarHeight, scrollDirection]);
 
     const playSound = () => {
         if (audioRef.current) {
@@ -13,11 +63,13 @@ const Navbar = () => {
     };
 
     return (
-        <div 
+        <div
+            ref={navbarRef}
             style={{
-                position: 'sticky',
+                position: 'fixed',
                 top: 0,
-                transition: 'none'
+                transform: `translateY(${translateY}px)`, // Hide or show based on scroll direction
+                transition: 'transform 0.3s ease-in-out', // Smooth transition for navbar movement
             }}
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >
@@ -31,37 +83,37 @@ const Navbar = () => {
             </div>
             <div className="nav-right flex items-start">
                 <a
-                    href="https://devfolio.co/discover" // Link to open
-                    target="_blank" // Opens link in a new tab
-                    rel="noopener noreferrer" // Security feature for external links
+                    href="https://devfolio.co/discover"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
-                        fontFamily: 'Hitmarker', fontWeight: 'bold', // Custom font
-                        textDecoration: "none" // Removes underline from the link
+                        fontFamily: 'Hitmarker', fontWeight: 'bold',
+                        textDecoration: "none"
                     }}
                 >
-                    <button onClick={playSound} 
+                    <button onClick={playSound}
                         style={{
-                            cursor: `url(${require('../../assets/buttoncursor.png')}), auto`, // Custom cursor
-                            padding: "8px 16px", // Smaller padding for mobile screens
-                            backgroundColor: "rgba(51, 51, 51, 0.8)", // Darker color with reduced opacity
-                            border: "2px solid #ff7200", // Yellow border like Call of Duty color theme
-                            borderRadius: "10px", // Subtle rounded edges for a more rugged feel
-                            color: "#ff7200", // Bright yellow text to match the theme
-                            fontSize: "14px", // Smaller font size for mobile
+                            cursor: `url(${require('../../assets/buttoncursor.png')}), auto`,
+                            padding: "8px 16px",
+                            backgroundColor: "rgba(51, 51, 51, 0.8)",
+                            border: "2px solid #ff7200",
+                            borderRadius: "10px",
+                            color: "#ff7200",
+                            fontSize: "14px",
                             letterSpacing: "2px",
                             transition: "background-color 0.3s, box-shadow 0.3s",
                             boxShadow: "0 0 15px 3px rgba(255, 204, 0, 0.7)",
                             position: "relative",
                             overflow: "hidden",
-                            marginLeft: window.innerWidth <= 640 ? "25px" : "0px", // Apply left margin on mobile
-                            marginTop: "4px" // 4px top margin for the button
+                            marginLeft: window.innerWidth <= 640 ? "25px" : "0px",
+                            marginTop: "4px"
                         }}
                         onMouseOver={(e) => {
-                            e.target.style.backgroundColor = "rgba(34, 34, 34, 0.9)"; // Slightly darker on hover
+                            e.target.style.backgroundColor = "rgba(34, 34, 34, 0.9)";
                             e.target.style.boxShadow = "0 0 20px 6px rgba(255, 204, 0, 0.9)";
                         }}
                         onMouseOut={(e) => {
-                            e.target.style.backgroundColor = "rgba(51, 51, 51, 0.8)"; // Original dark background with reduced opacity
+                            e.target.style.backgroundColor = "rgba(51, 51, 51, 0.8)";
                             e.target.style.boxShadow = "0 0 15px 3px rgba(255, 204, 0, 0.7)";
                         }}
                     >

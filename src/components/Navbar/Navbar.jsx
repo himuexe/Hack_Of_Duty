@@ -3,26 +3,15 @@ import logo from "../../assets/logo.png";
 import club from "../../assets/club.png";
 import aud from "../../assets/thaithai.mp3";
 
-// Throttle function
-const throttle = (func, delay) => {
-    let lastCall = 0;
-    return function (...args) {
-        const now = new Date().getTime();
-        if (now - lastCall < delay) {
-            return;
-        }
-        lastCall = now;
-        return func(...args);
-    };
-};
-
 const Navbar = () => {
     const navbarRef = useRef(null);
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [translateY, setTranslateY] = useState(0);
     const [scrollDirection, setScrollDirection] = useState("up");
-
     const audioRef = useRef(null);
+
+    const scrollThreshold = 50; // Only trigger after scrolling 50px
+    let lastScrollTop = 0; // To track the last scroll position
 
     useEffect(() => {
         if (navbarRef.current) {
@@ -31,41 +20,30 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        let prevScrollY = window.scrollY;
-        let accumulatedDiff = 0;
-
-        const controlNavbar = throttle(() => {
+        const controlNavbar = () => {
             const currentScrollY = window.scrollY;
 
-            // Determine scroll direction (up or down)
-            if (currentScrollY > prevScrollY) {
-                setScrollDirection("down");
-            } else if (currentScrollY < prevScrollY) {
-                setScrollDirection("up");
+            // Check if the scroll has moved more than the threshold
+            if (Math.abs(currentScrollY - lastScrollTop) > scrollThreshold) {
+                if (currentScrollY > lastScrollTop) {
+                    // Scrolling down
+                    setTranslateY(-navbarHeight); // Hide navbar
+                } else {
+                    // Scrolling up
+                    setTranslateY(0); // Show navbar
+                }
+
+                // Update the last scroll position
+                lastScrollTop = currentScrollY;
             }
+        };
 
-            const scrollDiff = prevScrollY - currentScrollY;
-
-            accumulatedDiff = Math.min(
-                Math.max(accumulatedDiff + scrollDiff, -navbarHeight),
-                0
-            );
-
-            if (scrollDirection === "up") {
-                setTranslateY(0); // Show the navbar when scrolling up
-            } else if (scrollDirection === "down") {
-                setTranslateY(-navbarHeight); // Hide the navbar when scrolling down
-            }
-
-            prevScrollY = currentScrollY;
-        }, 200); // Throttle the scroll event to trigger every 200ms
-
-        window.addEventListener('scroll', controlNavbar);
+        window.addEventListener("scroll", controlNavbar);
 
         return () => {
-            window.removeEventListener('scroll', controlNavbar);
+            window.removeEventListener("scroll", controlNavbar);
         };
-    }, [navbarHeight, scrollDirection]);
+    }, [navbarHeight]);
 
     const playSound = () => {
         if (audioRef.current) {
@@ -78,19 +56,19 @@ const Navbar = () => {
         <div
             ref={navbarRef}
             style={{
-                position: 'fixed',
+                position: "fixed",
                 top: 0,
-                transform: `translateY(${translateY}px)`, 
-                transition: 'transform 0.3s ease-in-out',
+                transform: `translateY(${translateY}px)`, // Hide or show based on scroll direction
+                transition: "transform 0.3s ease-in-out", // Smooth transition for navbar movement
             }}
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
-                <a href='https://srmsigkdd.vercel.app/' target="_blank" rel="noopener noreferrer">
-                    <img src={logo} alt="Icon" className='icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor' />
+                <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt="Icon" className="icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor" />
                 </a>
-                <a href='https://srmsigkdd.vercel.app/' target="_blank" rel="noopener noreferrer">
-                    <img src={club} alt="Icon" className='w-34 h-10 button-cursor' />
+                <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src={club} alt="Icon" className="w-34 h-10 button-cursor" />
                 </a>
             </div>
             <div className="nav-right flex items-start">
@@ -99,13 +77,15 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                        fontFamily: 'Hitmarker', fontWeight: 'bold',
-                        textDecoration: "none"
+                        fontFamily: "Hitmarker",
+                        fontWeight: "bold",
+                        textDecoration: "none",
                     }}
                 >
-                    <button onClick={playSound}
+                    <button
+                        onClick={playSound}
                         style={{
-                            cursor: `url(${require('../../assets/buttoncursor.png')}), auto`,
+                            cursor: `url(${require("../../assets/buttoncursor.png")}), auto`,
                             padding: "8px 16px",
                             backgroundColor: "rgba(51, 51, 51, 0.8)",
                             border: "2px solid #ff7200",
@@ -118,7 +98,7 @@ const Navbar = () => {
                             position: "relative",
                             overflow: "hidden",
                             marginLeft: window.innerWidth <= 640 ? "25px" : "0px",
-                            marginTop: "4px"
+                            marginTop: "4px",
                         }}
                         onMouseOver={(e) => {
                             e.target.style.backgroundColor = "rgba(34, 34, 34, 0.9)";

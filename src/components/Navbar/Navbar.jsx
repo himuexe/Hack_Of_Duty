@@ -3,11 +3,24 @@ import logo from "../../assets/logo.png";
 import club from "../../assets/club.png";
 import aud from "../../assets/thaithai.mp3";
 
+// Throttle function
+const throttle = (func, delay) => {
+    let lastCall = 0;
+    return function (...args) {
+        const now = new Date().getTime();
+        if (now - lastCall < delay) {
+            return;
+        }
+        lastCall = now;
+        return func(...args);
+    };
+};
+
 const Navbar = () => {
     const navbarRef = useRef(null);
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [translateY, setTranslateY] = useState(0);
-    const [scrollDirection, setScrollDirection] = useState("up"); // New state to track scroll direction
+    const [scrollDirection, setScrollDirection] = useState("up");
 
     const audioRef = useRef(null);
 
@@ -21,19 +34,17 @@ const Navbar = () => {
         let prevScrollY = window.scrollY;
         let accumulatedDiff = 0;
 
-        const controlNavbar = () => {
+        const controlNavbar = throttle(() => {
             const currentScrollY = window.scrollY;
 
             // Determine scroll direction (up or down)
             if (currentScrollY > prevScrollY) {
-                // Scrolling down
                 setScrollDirection("down");
             } else if (currentScrollY < prevScrollY) {
-                // Scrolling up
                 setScrollDirection("up");
             }
 
-            const scrollDiff = prevScrollY - currentScrollY; // Positive when scrolling up
+            const scrollDiff = prevScrollY - currentScrollY;
 
             accumulatedDiff = Math.min(
                 Math.max(accumulatedDiff + scrollDiff, -navbarHeight),
@@ -47,7 +58,7 @@ const Navbar = () => {
             }
 
             prevScrollY = currentScrollY;
-        };
+        }, 200); // Throttle the scroll event to trigger every 200ms
 
         window.addEventListener('scroll', controlNavbar);
 
@@ -59,7 +70,7 @@ const Navbar = () => {
     const playSound = () => {
         if (audioRef.current) {
             audioRef.current.volume = 0.5;
-            audioRef.current.play(); // Play the sound when the button is clicked
+            audioRef.current.play();
         }
     };
 
@@ -69,8 +80,8 @@ const Navbar = () => {
             style={{
                 position: 'fixed',
                 top: 0,
-                transform: `translateY(${translateY}px)`, // Hide or show based on scroll direction
-                transition: 'transform 0.3s ease-in-out', // Smooth transition for navbar movement
+                transform: `translateY(${translateY}px)`, 
+                transition: 'transform 0.3s ease-in-out',
             }}
             className="navbar w-full flex flex-row justify-between px-4 py-3 md:py-6 lg:py-3 bg-orange-500 shadow-md z-50"
         >

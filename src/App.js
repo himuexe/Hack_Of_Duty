@@ -10,6 +10,7 @@ import FAQs from "./components/FAQ/faqs.jsx";
 import PrizePool from "./components/Prize/PrizePool.jsx";
 import Sponsors from "./components/Sponsors/Sponsors.jsx";
 import Cards from "./components/Cards/Cards.jsx"; // Import the new Cards component
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <Outro />
       <FAQs />
       <Footer />
+      <Analytics />
     </div>
   );
 };

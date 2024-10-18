@@ -111,7 +111,7 @@ export const Hero = () => {
             {/* Devfolio Button */}
             <div
               className="apply-button"
-              data-hackathon-slug="hack-of-duty-24"
+              data-hackathon-slug="hackofduty"
               data-button-theme="dark"
               style={{ height: '44px', width: '312px' }}
             ></div>

@@ -37,7 +37,6 @@ export const Hero = () => {
   const animateHero = () => {
     const timeline = gsap.timeline();
 
-    // Animate hero-title only if it hasn't animated before
     if (!hasAnimated.current.title) {
       timeline.from('.hero-title', {
         y: 100,
@@ -50,7 +49,6 @@ export const Hero = () => {
       });
     }
 
-    // Animate hero-context-left only if it hasn't animated before
     if (!hasAnimated.current.left) {
       timeline.from('.hero-context-left', {
         x: -100,
@@ -63,7 +61,6 @@ export const Hero = () => {
       });
     }
 
-    // Animate hero-context-right only if it hasn't animated before
     if (!hasAnimated.current.right) {
       timeline.from('.hero-context-right', {
         x: 100,
@@ -102,6 +99,15 @@ export const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const video = document.querySelector('video');
+    if (video) {
+      video.controls = false; // Disable controls
+      video.setAttribute('playsinline', ''); // Prevent fullscreen on iOS
+      video.setAttribute('webkit-playsinline', ''); // Prevent fullscreen on iOS
+    }
+  }, []);
+
   return (
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
       <video id="video" autoPlay loop muted>
@@ -114,7 +120,6 @@ export const Hero = () => {
         </div>
         <div className="hero-context flex flex-col md:flex-row w-full">
           <div className="hero-context-left flex flex-col gap-2 items-center justify-center text-9xl md:text-[12rem] lg:text-[15rem]">
-            {/* <span style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.5)' }}>24h</span> */}
             <span className="text-shadow">28-29th</span>
             <span className="text-shadow">OCTOBER</span>
           </div>

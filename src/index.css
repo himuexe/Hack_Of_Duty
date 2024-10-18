@@ -26,11 +26,13 @@ body {
     align-items: center;
 }
 
-/* Specific styles for iOS devices */
+/* iOS-specific styles to handle background attachment issues */
 @supports (-webkit-touch-callout: none) {
     body {
-        background-attachment: scroll;
-        /* Ensure background scrolls on iOS */
+        background-attachment: scroll !important;
+        /* Switch to scroll behavior on iOS */
+        background-size: cover !important;
+        /* Ensure the background covers the entire container */
     }
 }
 
@@ -41,22 +43,19 @@ body {
     flex-direction: column;
 }
 
-/* @media (max-width: 768px) {
-    body {
-        background-image: url('assets/gradientX.png');
-    }
-} */
-
 .crosshair-cursor {
     cursor: url('assets/confirm.png'), auto;
-    }
+}
+
 .button-cursor {
     cursor: url('assets/buttoncursor.png'), auto;
-    }
+}
+
 button {
     cursor: url('assets/buttoncursor.png'), auto;
     /* Default cursor for buttons */
 }
+
 /* Custom background separator styling */
 .bg-sep {
     position: relative;
@@ -70,4 +69,8 @@ video {
     /* Prevent text selection */
     -webkit-user-drag: none;
     /* Prevent dragging on iOS */
+    object-fit: cover;
+    /* Ensure the video covers its container */
+    width: 100%;
+    height: 100%;
 }

@@ -15,7 +15,30 @@ body {
     cursor: url('assets/confirm.png'), auto;
     background-image: linear-gradient(to bottom, #ff7200, black);
     background-size: 100% 100vh;
+    /* Cover the viewport height */
     background-attachment: fixed;
+    /* Keep the background fixed in the viewport */
+    overflow-x: hidden;
+    font-family: 'Anton', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styles for iOS devices */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll;
+        /* Ensure background scrolls on iOS */
+    }
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* @media (max-width: 768px) {
@@ -38,4 +61,13 @@ button {
 .bg-sep {
     position: relative;
     height: 1vh;
+}
+
+video {
+    pointer-events: none;
+    /* Prevent interaction */
+    user-select: none;
+    /* Prevent text selection */
+    -webkit-user-drag: none;
+    /* Prevent dragging on iOS */
 }

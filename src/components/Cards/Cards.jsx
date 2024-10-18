@@ -39,8 +39,19 @@ const missions = [
 ];
 
 const Cards = () => {
-    useEffect(() => {
+  useEffect(() => {
     const videos = document.querySelectorAll('video');
+
+    // Function to play all videos
+    const playAllVideos = () => {
+      videos.forEach((video) => {
+        video.play().catch((error) => {
+          console.error('Error playing video:', error);
+        });
+      });
+    };
+
+    // Initially set up the videos
     videos.forEach((video) => {
       video.controls = false; // Disable controls
       video.setAttribute('playsinline', ''); // Prevent fullscreen on iOS
@@ -49,7 +60,22 @@ const Cards = () => {
       video.autoplay = true; // Ensure the video autoplays
       video.play();
     });
+
+    // Event listener for visibility change
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        playAllVideos(); // Play videos when returning to the page
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
+
   return (
     <div className="lg:mt-16 px-12 py-6">
       <div className="flex justify-center items-center mb-8">

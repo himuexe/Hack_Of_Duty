@@ -7,10 +7,11 @@ const Navbar = () => {
     const navbarRef = useRef(null);
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [translateY, setTranslateY] = useState(0);
+    const [scrollDirection, setScrollDirection] = useState("up");
     const audioRef = useRef(null);
-    const lastScrollTopRef = useRef(0);  // Use useRef to store the last scroll position
 
     const scrollThreshold = 50; // Only trigger after scrolling 50px
+    let lastScrollTop = 0; // To track the last scroll position
 
     useEffect(() => {
         if (navbarRef.current) {
@@ -23,8 +24,8 @@ const Navbar = () => {
             const currentScrollY = window.scrollY;
 
             // Check if the scroll has moved more than the threshold
-            if (Math.abs(currentScrollY - lastScrollTopRef.current) > scrollThreshold) {
-                if (currentScrollY > lastScrollTopRef.current) {
+            if (Math.abs(currentScrollY - lastScrollTop) > scrollThreshold) {
+                if (currentScrollY > lastScrollTop) {
                     // Scrolling down
                     setTranslateY(-navbarHeight); // Hide navbar
                 } else {
@@ -32,8 +33,8 @@ const Navbar = () => {
                     setTranslateY(0); // Show navbar
                 }
 
-                // Update the last scroll position using the ref
-                lastScrollTopRef.current = currentScrollY;
+                // Update the last scroll position
+                lastScrollTop = currentScrollY;
             }
         };
 

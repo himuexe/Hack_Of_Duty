@@ -1,5 +1,4 @@
-// src/components/Cards/Cards.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -40,6 +39,17 @@ const missions = [
 ];
 
 const Cards = () => {
+    useEffect(() => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+      video.controls = false; // Disable controls
+      video.setAttribute('playsinline', ''); // Prevent fullscreen on iOS
+      video.setAttribute('webkit-playsinline', ''); // Prevent fullscreen on iOS
+      video.muted = true; // Ensure the video is muted
+      video.autoplay = true; // Ensure the video autoplays
+      video.play();
+    });
+  }, []);
   return (
     <div className="lg:mt-16 px-12 py-6">
       <div className="flex justify-center items-center mb-8">

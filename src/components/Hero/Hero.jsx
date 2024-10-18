@@ -3,60 +3,56 @@ import { gsap } from 'gsap';
 import Image from '../../assets/herohai.webp';
 import targetVid from '../../assets/target.webm';
 import "./Hero.css";
-import aud from "../../assets/thaithai.mp3";
-
-const NeonButton = ({ text = 'Register Now' }) => {
-  const audioRef = useRef(null);
-
-  const playSound = () => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.5;
-      audioRef.current.play();
-    }
-  };
-
-  return (
-    <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer">
-      <button 
-        onClick={playSound} 
-        className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-200 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105 scale-125 md:scale-100"
-      >
-        <span className="relative z-10">{text}</span>
-        <div className="absolute inset-0 bg-orange-500 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
-        <audio ref={audioRef} src={aud} />
-      </button>
-    </a>
-  );
-};
 
 export const Hero = () => {
   const heroRef = useRef(null);
-  const hasAnimated = useRef(false); // Track if animations have been completed
+  const hasAnimated = useRef(false);
+
+  // Add Devfolio script on component mount
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const animateHero = () => {
     const timeline = gsap.timeline();
 
     if (!hasAnimated.current) {
-      timeline.from('.hero-title', {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.inOut',
-      })
-      .from('.hero-context-left', {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.inOut',
-      }, '-=0.5') // Start this animation half a second before the previous one ends
-      .from('.hero-context-right', {
-        x: 100,
-        opacity: 0,
-        duration: 0.7,
-        ease: 'power2.inOut',
-      }, '-=0.7'); // Start this animation before the left context finishes
+      timeline
+        .from('.hero-title', {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.inOut',
+        })
+        .from(
+          '.hero-context-left',
+          {
+            x: -100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+          },
+          '-=0.5'
+        )
+        .from(
+          '.hero-context-right',
+          {
+            x: 100,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power2.inOut',
+          },
+          '-=0.7'
+        );
 
-      hasAnimated.current = true; // Mark animations as completed
+      hasAnimated.current = true;
     }
   };
 
@@ -65,12 +61,10 @@ export const Hero = () => {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animateHero();
-          } 
-          // Reset hasAnimated if the section is no longer visible
-          else {
+          } else {
             hasAnimated.current = false;
           }
         });
@@ -92,20 +86,20 @@ export const Hero = () => {
   useEffect(() => {
     const video = document.querySelector('video');
     if (video) {
-      video.controls = false; // Disable controls
-      video.setAttribute('playsinline', ''); // Prevent fullscreen on iOS
-      video.setAttribute('webkit-playsinline', ''); // Prevent fullscreen on iOS
+      video.controls = false;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
     }
   }, []);
 
   return (
     <div ref={heroRef} className="parent h-screen flex flex-col crosshair-cursor">
       <video id="video" autoPlay loop muted>
-        <source src={targetVid} type='video/webm' />
+        <source src={targetVid} type="video/webm" />
       </video>
       <div className="hero flex flex-col flex-1 gap-10 h-1/2">
         <div className="hero-title flex flex-col w-full text-5xl">
-          <span className='flex ml-8 justify-start'>HACK&nbsp;OF</span>
+          <span className="flex ml-8 justify-start">HACK&nbsp;OF</span>
           <span className="flex mr-2 justify-end">DUTY</span>
         </div>
         <div className="hero-context flex flex-col md:flex-row w-full">
@@ -114,14 +108,19 @@ export const Hero = () => {
             <span className="text-shadow">OCTOBER</span>
           </div>
           <div className="hero-context-right flex justify-center md:px-24 md:justify-end mt-8 md:mt-0">
-            <NeonButton />
+            {/* Devfolio Button */}
+            <div
+              className="apply-button"
+              data-hackathon-slug="hack-of-duty-24"
+              data-button-theme="dark"
+              style={{ height: '44px', width: '312px' }}
+            ></div>
           </div>
         </div>
       </div>
-      <img src={Image} alt='Img' className='image absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full md:w-3/4 lg:w-1/2' />
+      <img src={Image} alt="Img" className="image absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full md:w-3/4 lg:w-1/2" />
     </div>
   );
 };
 
 export default Hero;
-

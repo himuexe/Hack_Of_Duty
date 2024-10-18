@@ -4,6 +4,9 @@ import SIGKDD from '../../assets/SIGKDD.png';
 import SRM from '../../assets/SRM-logo.png';
 import DSBS from '../../assets/DSBS.png';
 import ACM from '../../assets/ACM.png';
+import Devfolio from '../../assets/Devfolio.png';
+import Polygon from '../../assets/Polygon.png';
+import ETHIndia from '../../assets/ETHIndia.png';
 import './Sponsors.css';
 
 const Sponsors = () => {
@@ -31,6 +34,16 @@ const Sponsors = () => {
               <img className="sponsor-img" src={SRM} alt="Img" />
             </div>
             <div className="slide">
+              <img className="sponsor-img" src={Devfolio} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={Polygon} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={ETHIndia} alt="Img" />
+            </div>
+
+            <div className="slide">
               <img className="sponsor-img" src={SIGKDD} alt="Img" />
             </div>
             <div className="slide">
@@ -41,6 +54,15 @@ const Sponsors = () => {
             </div>
             <div className="slide">
               <img className="sponsor-img" src={SRM} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={Devfolio} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={Polygon} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={ETHIndia} alt="Img" />
             </div>
           </div>
         </div>

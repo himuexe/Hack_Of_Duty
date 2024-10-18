@@ -65,8 +65,7 @@ const Navbar = () => {
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
-                    <img src={logo} alt="Icon" className="icon w-12 h-12 md:w-12 md:h-12 lg:w-15 lg:h-15 button-cursor" />
-                </a>
+                <img src={logo} alt="Icon" className="icon w-12 h-12 md:w-12 md:h-12 lg:w-12 lg:h-12 button-cursor" />                  </a>
                 <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <img src={club} alt="Icon" className="w-34 h-10 button-cursor" />
                 </a>

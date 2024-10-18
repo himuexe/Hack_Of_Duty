@@ -7,16 +7,28 @@ const Navbar = () => {
     const navbarRef = useRef(null);
     const [navbarHeight, setNavbarHeight] = useState(0);
     const [translateY, setTranslateY] = useState(0);
-    const [scrollDirection, setScrollDirection] = useState("up");
     const audioRef = useRef(null);
 
     const scrollThreshold = 50; // Only trigger after scrolling 50px
     let lastScrollTop = 0; // To track the last scroll position
+    const minTranslateY = 5; // Slight buffer to hide the navbar fully
 
     useEffect(() => {
-        if (navbarRef.current) {
-            setNavbarHeight(navbarRef.current.offsetHeight);
-        }
+        const updateNavbarHeight = () => {
+            if (navbarRef.current) {
+                setNavbarHeight(navbarRef.current.offsetHeight);
+            }
+        };
+
+        // Set initial navbar height
+        updateNavbarHeight();
+        
+        // Update navbar height on window resize
+        window.addEventListener('resize', updateNavbarHeight);
+        
+        return () => {
+            window.removeEventListener('resize', updateNavbarHeight);
+        };
     }, []);
 
     useEffect(() => {
@@ -27,7 +39,7 @@ const Navbar = () => {
             if (Math.abs(currentScrollY - lastScrollTop) > scrollThreshold) {
                 if (currentScrollY > lastScrollTop) {
                     // Scrolling down
-                    setTranslateY(-navbarHeight); // Hide navbar
+                    setTranslateY(-navbarHeight - minTranslateY); // Hide navbar completely
                 } else {
                     // Scrolling up
                     setTranslateY(0); // Show navbar
@@ -65,7 +77,8 @@ const Navbar = () => {
         >
             <div className="nav-left flex flex-row justify-center items-center gap-5">
                 <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <img src={logo} alt="Icon" className="icon w-12 h-12 md:w-12 md:h-12 lg:w-12 lg:h-12 button-cursor" />                  </a>
+                    <img src={logo} alt="Icon" className="icon w-12 h-12 md:w-12 md:h-12 lg:w-12 lg:h-12 button-cursor" />
+                </a>
                 <a href="https://srmsigkdd.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <img src={club} alt="Icon" className="w-34 h-10 button-cursor" />
                 </a>

@@ -17,7 +17,10 @@ const NeonButton = ({ text = 'Register Now' }) => {
 
   return (
     <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer">
-      <button onClick={playSound} className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-200 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105 scale-125 md:scale-100">
+      <button 
+        onClick={playSound} 
+        className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-200 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105 scale-125 md:scale-100"
+      >
         <span className="relative z-10">{text}</span>
         <div className="absolute inset-0 bg-orange-500 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
         <audio ref={audioRef} src={aud} />
@@ -28,49 +31,32 @@ const NeonButton = ({ text = 'Register Now' }) => {
 
 export const Hero = () => {
   const heroRef = useRef(null);
-  const hasAnimated = useRef({
-    title: false,
-    left: false,
-    right: false,
-  });
+  const hasAnimated = useRef(false); // Track if animations have been completed
 
   const animateHero = () => {
     const timeline = gsap.timeline();
 
-    if (!hasAnimated.current.title) {
+    if (!hasAnimated.current) {
       timeline.from('.hero-title', {
         y: 100,
         opacity: 0,
         duration: 1,
         ease: 'power2.inOut',
-        onComplete: () => {
-          hasAnimated.current.title = true;
-        }
-      });
-    }
-
-    if (!hasAnimated.current.left) {
-      timeline.from('.hero-context-left', {
+      })
+      .from('.hero-context-left', {
         x: -100,
         opacity: 0,
         duration: 1,
         ease: 'power2.inOut',
-        onComplete: () => {
-          hasAnimated.current.left = true;
-        }
-      });
-    }
-
-    if (!hasAnimated.current.right) {
-      timeline.from('.hero-context-right', {
+      }, '-=0.5') // Start this animation half a second before the previous one ends
+      .from('.hero-context-right', {
         x: 100,
         opacity: 0,
         duration: 0.7,
         ease: 'power2.inOut',
-        onComplete: () => {
-          hasAnimated.current.right = true;
-        }
-      });
+      }, '-=0.7'); // Start this animation before the left context finishes
+
+      hasAnimated.current = true; // Mark animations as completed
     }
   };
 
@@ -82,6 +68,10 @@ export const Hero = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             animateHero();
+          } 
+          // Reset hasAnimated if the section is no longer visible
+          else {
+            hasAnimated.current = false;
           }
         });
       },

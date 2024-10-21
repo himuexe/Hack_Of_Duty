@@ -15,7 +15,7 @@ const NeonButton = ({ text = 'Register Now' }) => {
   };
 
   return (
-    <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer">
+    <a href="https://hackofduty.devfolio.co/" target="_blank" rel="noopener noreferrer">
       <button onClick={playSound} className="px-6 py-3 bg-orange-500 bg-opacity-20 border-2 border-orange-500 rounded-md text-orange-200 text-xl font-semibold relative overflow-hidden group transition-all duration-300 hover:bg-opacity-30 hover:scale-105 scale-125 md:scale-100">
         <span style={{ fontFamily: 'Hitmarker' }} className="relative z-10">{text}</span>
         <div className="absolute inset-0 bg-orange-500 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>

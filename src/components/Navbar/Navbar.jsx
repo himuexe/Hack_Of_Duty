@@ -85,7 +85,7 @@ const Navbar = () => {
             </div>
             <div className="nav-right flex items-start">
                 <a
-                    href="https://devfolio.co/discover"
+                    href="https://hackofduty.devfolio.co/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

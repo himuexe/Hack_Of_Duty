@@ -94,7 +94,7 @@ const Navbar = () => {
                         textDecoration: "none",
                     }}
                 >
-                    {/* <button
+                    <button
                         onClick={playSound}
                         style={{
                             cursor: `url(${require("../../assets/buttoncursor.png")}), auto`,
@@ -123,7 +123,7 @@ const Navbar = () => {
                     >
                         Register Now
                         <audio ref={audioRef} src={aud} />
-                    </button> */}
+                    </button>
                 </a>
             </div>
         </div>

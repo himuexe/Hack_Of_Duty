@@ -3,7 +3,7 @@ import './Timer.css';
 
 const CountdownTimer = () => {
   const calculateTimeLeft = useCallback(() => {
-    const difference = new Date('2024-10-28T11:00:00') - new Date();
+    const difference = new Date('2024-10-28T10:00:00') - new Date();
     if (difference > 0) {
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),

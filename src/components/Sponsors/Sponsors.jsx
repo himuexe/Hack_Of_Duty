@@ -8,6 +8,7 @@ import Devfolio from '../../assets/Devfolio.png';
 import Polygon from '../../assets/Polygon.png';
 import ETHIndia from '../../assets/ETHIndia.png';
 import Aptos from '../../assets/Aptos.png';
+import QuillShield from '../../assets/QuillShield.png';
 import './Sponsors.css';
 
 const Sponsors = () => {
@@ -46,6 +47,9 @@ const Sponsors = () => {
             <div className="slide">
               <img className="sponsor-img" src={Aptos} alt="Img" />
             </div>
+            <div className="slide">
+              <img className="sponsor-img" src={QuillShield} alt="Img" />
+            </div>
 
             <div className="slide">
               <img className="sponsor-img" src={SIGKDD} alt="Img" />
@@ -70,6 +74,9 @@ const Sponsors = () => {
             </div>
             <div className="slide">
               <img className="sponsor-img" src={Aptos} alt="Img" />
+            </div>
+            <div className="slide">
+              <img className="sponsor-img" src={QuillShield} alt="Img" />
             </div>
           </div>
         </div>
